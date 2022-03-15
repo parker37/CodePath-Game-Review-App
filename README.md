@@ -1,1 +1,1 @@
-# CodePath-Group-App
+# CodePath-Game-Review-App
