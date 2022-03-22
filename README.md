@@ -107,7 +107,7 @@ An app that allows users to search through their favorite games to write and rea
 
 ## Wireframes
 ### [BONUS] Digital Wireframes & Mockups
-<img src="YOUR_WIREFRAME_IMAGE_URL" width=600>![](https://i.imgur.com/mLRygr2.png)
+![](https://i.imgur.com/DeXdj6Y.png)
 
 
 ### [BONUS] Interactive Prototype
