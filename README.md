@@ -116,7 +116,7 @@ An app that allows users to search through their favorite games to write and rea
 
 ### Models
 
-Users
+#### Users
 | Property      | Type     | Description |
 |---------------|----------|-------------|
 | username      | String   | Unique id for user|
@@ -125,7 +125,7 @@ Users
 | usrTopGenre   | String   | User's Chosen Top Genre |
 | userTopGame   | String   | User's Chosen Fav Game |
 
-Games
+#### Games
 | Property      | Type     | Description |
 |---------------|----------|-------------|
 | gameTitle     | String   | Title of game |
@@ -133,7 +133,7 @@ Games
 | gameDesc      | String   | Brief summary of the game |
 | gameAvgRating | Number   | 1-5 Average Rating from all ratings |
 
-Reviews
+#### Reviews
 | Property      | Type     | Description |
 |---------------|----------|-------------|
 | objectID      | String   | Unique ID for each review |
@@ -142,7 +142,7 @@ Reviews
 | author        | Pointer to User | Author's username |
 | Game          | Pointer to Game | Game this review belongs to |
 
-Comments
+#### Comments
 | Property      | Type     | Description |
 |---------------|----------|-------------|
 | objectID      | String   | Unique ID for each post |
@@ -153,6 +153,148 @@ Comments
 
 
 ### Networking
-- [Add list of network requests by screen ]
-- [Create basic snippets for each Parse network request]
+
+#### Login/Register
+- Create/Post: Creating a new user storing: username, password
+   ```swift
+   let newUser = PFObject(className:"User")
+   newUser["uesrname"] = username
+   newUser["password"] = password
+   newUser["userPFP"] = null
+   newUser.saveInBackground { (succeeded, error)  in
+       if (succeeded) {
+           print("Created New user")
+       } else {
+           print(error.localizedDescription)
+       }
+   }
+   ```
+- Read/Get: Query all users where username is the entered username
+   ```swift
+   let query = PFQuery(className:"User")
+   query.whereKey("author", equalTo: usernameEntered)
+   query.findObjectsInBackground { (user: [PFObject]?, error: Error?) in
+      if let error = error {
+         print(error.localizedDescription)
+      } else if let user = user {
+         print("Found user: " + user[0])
+         // TODO: Do something with user...
+      }
+   }
+   ```
+
+#### Home Screen
+- Read/Get: Get Games Information (Game Poster, Game Name)
+   ```swift
+   let query = PFQuery(className:"Games")
+   query.whereKey("author", equalTo: )
+   query.findObjectsInBackground { (games: [PFObject]?, error: Error?) in
+      if let error = error {
+         print(error.localizedDescription)
+      } else if let games = games {
+         print("Found games count: " + games)
+         // TODO: Do something with games...
+      }
+   }
+   ```
+- Read/Get: Query Current User & Get User's Profile Picture
+   ```swift
+   let query = PFQuery(className:"User")
+   query.whereKey("author", equalTo: currentUser)
+   query.findObjectsInBackground { (user: [PFObject]?, error: Error?) in
+      if let error = error {
+         print(error.localizedDescription)
+      } else if let user = user {
+         print("Found user: " + user[0])
+         // TODO: Do something with user...
+      }
+   }
+   ```
+
+#### Game Description
+- Read/Get: Get Reviews w/ all the information (Review Message, Author, Author Picture, Rating, Comments)
+   ```swift
+   let query = PFQuery(className:"Reviews")
+   query.whereKey("gameTitle", equalTo: game)
+   query.findObjectsInBackground { (reviews: [PFObject]?, error: Error?) in
+      if let error = error {
+         print(error.localizedDescription)
+      } else if let reviews = reviews {
+         print("Found reviws count: " + reviews)
+         // TODO: Do something with reviews...
+      }
+   }
+   ```
+- Update/Put: Updating Overall Average Game Rating whenever a new review is created
+   ```swift
+   let query = PFQuery(className:"Games")
+   query.getObjectInBackground(withId: currentGame["objectID"]) { (game: PFObject?, error: Error?) in
+       if let error = error {
+           print(error.localizedDescription)
+       } else if let game = game {
+           game["avgRating"] = (game["avgRating"] + newRating) / 2
+           game.saveInBackground()
+       }
+   }
+   ```
+- Create/Post: User creates a review for this specific game inputing specific message and rating
+   ```swift
+   let newReview = PFObject(className:"Reviews")
+   newReview["reviewMsg"] = message
+   newReview["author"] = currentUser
+   newReview["game"] = currentGame
+   newReview["rating"] = userRating
+   newReview["objectID"] = RandomID()
+   newReview.saveInBackground { (succeeded, error)  in
+       if (succeeded) {
+           print("Created New user")
+       } else {
+           print(error.localizedDescription)
+       }
+   }
+   ```
+
+#### Profile
+- Read/Get: Get User's information (Username, Profile picture, Top Genre, Top Game)
+   ```swift
+   let query = PFQuery(className:"User")
+   query.whereKey("author", equalTo: currentUser)
+   query.findObjectsInBackground { (user: [PFObject]?, error: Error?) in
+      if let error = error {
+         print(error.localizedDescription)
+      } else if let user = user {
+         print("Found user: " + user[0])
+         // TODO: Do something with user...
+      }
+   }
+   ```
+- Read/Get: Get User's Reviews
+   ```swift
+   let query = PFQuery(className:"Reviews")
+   query.whereKey("author", equalTo: currentUser)
+   query.findObjectsInBackground { (reviews: [PFObject]?, error: Error?) in
+      if let error = error {
+         print(error.localizedDescription)
+      } else if let reviews = reviews {
+         print("Found reviews count: " + reviews)
+         // TODO: Do something with user...
+      }
+   }
+   ```
+#### Setting
+- Update/Put: Update User's username/password/profile picture
+   ```swift
+   let query = PFQuery(className:"Users")
+   query.getObjectInBackground(withId: currentUser["objectID"]) { (user: PFObject?, error: Error?) in
+       if let error = error {
+           print(error.localizedDescription)
+       } else if let user = user {
+           user["username"] = newUsername
+           user["password"] = newPassword
+           user["userPFP"] = newPFP
+           user.saveInBackground()
+       }
+   }
+   ```
+
 - [OPTIONAL: List endpoints if using existing API such as Yelp]
