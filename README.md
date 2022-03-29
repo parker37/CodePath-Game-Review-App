@@ -116,25 +116,41 @@ An app that allows users to search through their favorite games to write and rea
 
 ### Models
 
+Users
 | Property      | Type     | Description |
 |---------------|----------|-------------|
 | username      | String   | Unique id for user|
 | password      | String   | Unique password for user|
-| gameTitle     | String   | Title of game |
-| gamePoster    | File     | Image of Game Cover Art |
 | userPFP       | File     | Image of User's profile picture |
-| gameDesc      | String   | Brief summary of the game |
-| gameAvgRating | Number   | 1-5 Average Rating from all ratings |
-| reviewMsg     | String   | User created review message |
-| rating        | Number   | 1-5 Rating of Game |
-| author        | String   | Author's username |
-| profPic       | Pointer to File | Author's Profile picture |
-| objectID      | String   | Unique ID for each post |
-| commentMsg    | String   | Author's Comment Message |
-| commentAuthor | String   | Author of Comment |
-| cmtAuthorPFP  | Pointer to File | Author of Comment's Profile picture |
 | usrTopGenre   | String   | User's Chosen Top Genre |
 | userTopGame   | String   | User's Chosen Fav Game |
+
+Games
+| Property      | Type     | Description |
+|---------------|----------|-------------|
+| gameTitle     | String   | Title of game |
+| gamePoster    | File     | Image of Game Cover Art |
+| gameDesc      | String   | Brief summary of the game |
+| gameAvgRating | Number   | 1-5 Average Rating from all ratings |
+
+Reviews
+| Property      | Type     | Description |
+|---------------|----------|-------------|
+| objectID      | String   | Unique ID for each review |
+| reviewMsg     | String   | User created review message |
+| rating        | Number   | 1-5 Rating of Game |
+| author        | Pointer to User | Author's username |
+| Game          | Pointer to Game | Game this review belongs to |
+
+Comments
+| Property      | Type     | Description |
+|---------------|----------|-------------|
+| objectID      | String   | Unique ID for each post |
+| author        | Pointer to User | Author's username |
+| commentMsg    | String   | Author's Comment Message |
+| parentReview  | Pointer to Review | Review this comment belongs to |
+
+
 
 ### Networking
 - [Add list of network requests by screen ]
