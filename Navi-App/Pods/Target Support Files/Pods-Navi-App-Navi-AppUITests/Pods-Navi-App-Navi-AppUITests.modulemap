@@ -1,0 +1,6 @@
+framework module Pods_Navi_App_Navi_AppUITests {
+  umbrella header "Pods-Navi-App-Navi-AppUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
