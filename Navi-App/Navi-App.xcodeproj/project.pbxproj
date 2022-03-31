@@ -19,6 +19,7 @@
 		5267F19F51DD33A06318D920 /* Pods_Navi_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34914B499B7DE9FC4F88CAC1 /* Pods_Navi_AppTests.framework */; };
 		69207C1A51AEC1C52B783895 /* Pods_Navi_App_Navi_AppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7CF4A0DD2048539857B8439 /* Pods_Navi_App_Navi_AppUITests.framework */; };
 		6F61F094AC5F7119EF29B528 /* Pods_Navi_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0375613B7C8EFB7AACF97709 /* Pods_Navi_App.framework */; };
+		C20E5FD027F6630C00407272 /* ZenDots-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C20E5FCF27F6630C00407272 /* ZenDots-Regular.ttf */; };
 		C226285A27F3A95000F7D640 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C226285927F3A95000F7D640 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +61,7 @@
 		4417F0F127F39C9000B28F10 /* Navi_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navi_AppUITests.swift; sourceTree = "<group>"; };
 		4417F0F327F39C9000B28F10 /* Navi_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navi_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		BE8F76D99EBA2A7331EC9501 /* Pods-Navi-App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Navi-App.debug.xcconfig"; path = "Target Support Files/Pods-Navi-App/Pods-Navi-App.debug.xcconfig"; sourceTree = "<group>"; };
+		C20E5FCF27F6630C00407272 /* ZenDots-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ZenDots-Regular.ttf"; path = "../../../../Downloads/Zen_Dots/ZenDots-Regular.ttf"; sourceTree = "<group>"; };
 		C226285927F3A95000F7D640 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C7CF4A0DD2048539857B8439 /* Pods_Navi_App_Navi_AppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Navi_App_Navi_AppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDD53FA6F2DA004A027E4879 /* Pods-Navi-App-Navi-AppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Navi-App-Navi-AppUITests.release.xcconfig"; path = "Target Support Files/Pods-Navi-App-Navi-AppUITests/Pods-Navi-App-Navi-AppUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 		4417F0CF27F39C8900B28F10 /* Navi-App */ = {
 			isa = PBXGroup;
 			children = (
+				C20E5FCF27F6630C00407272 /* ZenDots-Regular.ttf */,
 				4417F0D027F39C8900B28F10 /* AppDelegate.swift */,
 				4417F0D227F39C8900B28F10 /* SceneDelegate.swift */,
 				4417F0D427F39C8900B28F10 /* ViewController.swift */,
@@ -280,6 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4417F0DD27F39C8F00B28F10 /* LaunchScreen.storyboard in Resources */,
+				C20E5FD027F6630C00407272 /* ZenDots-Regular.ttf in Resources */,
 				4417F0DA27F39C8F00B28F10 /* Assets.xcassets in Resources */,
 				4417F0D827F39C8900B28F10 /* Main.storyboard in Resources */,
 			);
