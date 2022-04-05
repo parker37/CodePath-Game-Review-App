@@ -33,13 +33,21 @@
       "size" : "40x40"
     },
     {
+<<<<<<< HEAD
       "filename" : "iphone-app-logo-2x.png",
+=======
+      "filename" : "AppIcon60x60@2x.png",
+>>>>>>> ee92dc5 (Launch screen)
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "60x60"
     },
     {
+<<<<<<< HEAD
       "filename" : "iphone-app-logo@3x.png",
+=======
+      "filename" : "AppIcon60x60@3x.png",
+>>>>>>> ee92dc5 (Launch screen)
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "60x60"
