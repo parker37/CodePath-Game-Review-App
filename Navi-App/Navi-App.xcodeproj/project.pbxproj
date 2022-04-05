@@ -19,11 +19,8 @@
 		5267F19F51DD33A06318D920 /* Pods_Navi_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34914B499B7DE9FC4F88CAC1 /* Pods_Navi_AppTests.framework */; };
 		69207C1A51AEC1C52B783895 /* Pods_Navi_App_Navi_AppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7CF4A0DD2048539857B8439 /* Pods_Navi_App_Navi_AppUITests.framework */; };
 		6F61F094AC5F7119EF29B528 /* Pods_Navi_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0375613B7C8EFB7AACF97709 /* Pods_Navi_App.framework */; };
-<<<<<<< HEAD
 		7514F4E327FBB24600F8CAFF /* ZenDots-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7514F4E527FBB24600F8CAFF /* ZenDots-Regular.ttf */; };
 		C226285A27F3A95000F7D640 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C226285927F3A95000F7D640 /* LoginViewController.swift */; };
-=======
->>>>>>> ee92dc5 (Launch screen)
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,13 +60,9 @@
 		4417F0ED27F39C9000B28F10 /* Navi-AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Navi-AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4417F0F127F39C9000B28F10 /* Navi_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navi_AppUITests.swift; sourceTree = "<group>"; };
 		4417F0F327F39C9000B28F10 /* Navi_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navi_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
-<<<<<<< HEAD
 		7514F4E427FBB24600F8CAFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file; name = Base; path = "Base.lproj/ZenDots-Regular.ttf"; sourceTree = "<group>"; };
 		BE8F76D99EBA2A7331EC9501 /* Pods-Navi-App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Navi-App.debug.xcconfig"; path = "Target Support Files/Pods-Navi-App/Pods-Navi-App.debug.xcconfig"; sourceTree = "<group>"; };
 		C226285927F3A95000F7D640 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-=======
-		BE8F76D99EBA2A7331EC9501 /* Pods-Navi-App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Navi-App.debug.xcconfig"; path = "Target Support Files/Pods-Navi-App/Pods-Navi-App.debug.xcconfig"; sourceTree = "<group>"; };
->>>>>>> ee92dc5 (Launch screen)
 		C7CF4A0DD2048539857B8439 /* Pods_Navi_App_Navi_AppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Navi_App_Navi_AppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDD53FA6F2DA004A027E4879 /* Pods-Navi-App-Navi-AppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Navi-App-Navi-AppUITests.release.xcconfig"; path = "Target Support Files/Pods-Navi-App-Navi-AppUITests/Pods-Navi-App-Navi-AppUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -112,10 +105,6 @@
 				2AC0CB948AF7F65DB24D8976 /* Pods-Navi-AppTests.debug.xcconfig */,
 				3B2C6C5065A77D97043F0706 /* Pods-Navi-AppTests.release.xcconfig */,
 			);
-<<<<<<< HEAD
-=======
-			name = Pods;
->>>>>>> ee92dc5 (Launch screen)
 			path = Pods;
 			sourceTree = "<group>";
 		};
