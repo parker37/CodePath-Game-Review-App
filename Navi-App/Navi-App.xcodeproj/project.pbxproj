@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		4417F0D127F39C8900B28F10 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4417F0D027F39C8900B28F10 /* AppDelegate.swift */; };
 		4417F0D327F39C8900B28F10 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4417F0D227F39C8900B28F10 /* SceneDelegate.swift */; };
-		4417F0D527F39C8900B28F10 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4417F0D427F39C8900B28F10 /* ViewController.swift */; };
+		4417F0D527F39C8900B28F10 /* GameGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4417F0D427F39C8900B28F10 /* GameGridViewController.swift */; };
 		4417F0D827F39C8900B28F10 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4417F0D627F39C8900B28F10 /* Main.storyboard */; };
 		4417F0DA27F39C8F00B28F10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4417F0D927F39C8F00B28F10 /* Assets.xcassets */; };
 		4417F0DD27F39C8F00B28F10 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4417F0DB27F39C8F00B28F10 /* LaunchScreen.storyboard */; };
@@ -19,6 +19,7 @@
 		5267F19F51DD33A06318D920 /* Pods_Navi_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34914B499B7DE9FC4F88CAC1 /* Pods_Navi_AppTests.framework */; };
 		69207C1A51AEC1C52B783895 /* Pods_Navi_App_Navi_AppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7CF4A0DD2048539857B8439 /* Pods_Navi_App_Navi_AppUITests.framework */; };
 		6F61F094AC5F7119EF29B528 /* Pods_Navi_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0375613B7C8EFB7AACF97709 /* Pods_Navi_App.framework */; };
+		7508A11D27FE913500D9152B /* GameGridViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7508A11C27FE913500D9152B /* GameGridViewCell.swift */; };
 		7514F4E327FBB24600F8CAFF /* ZenDots-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7514F4E527FBB24600F8CAFF /* ZenDots-Regular.ttf */; };
 		C226285A27F3A95000F7D640 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C226285927F3A95000F7D640 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
@@ -50,7 +51,7 @@
 		4417F0CD27F39C8900B28F10 /* Navi-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Navi-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4417F0D027F39C8900B28F10 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4417F0D227F39C8900B28F10 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4417F0D427F39C8900B28F10 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4417F0D427F39C8900B28F10 /* GameGridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameGridViewController.swift; sourceTree = "<group>"; };
 		4417F0D727F39C8900B28F10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4417F0D927F39C8F00B28F10 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4417F0DC27F39C8F00B28F10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -60,6 +61,7 @@
 		4417F0ED27F39C9000B28F10 /* Navi-AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Navi-AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4417F0F127F39C9000B28F10 /* Navi_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navi_AppUITests.swift; sourceTree = "<group>"; };
 		4417F0F327F39C9000B28F10 /* Navi_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navi_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		7508A11C27FE913500D9152B /* GameGridViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameGridViewCell.swift; sourceTree = "<group>"; };
 		7514F4E427FBB24600F8CAFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file; name = Base; path = "Base.lproj/ZenDots-Regular.ttf"; sourceTree = "<group>"; };
 		BE8F76D99EBA2A7331EC9501 /* Pods-Navi-App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Navi-App.debug.xcconfig"; path = "Target Support Files/Pods-Navi-App/Pods-Navi-App.debug.xcconfig"; sourceTree = "<group>"; };
 		C226285927F3A95000F7D640 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -136,8 +138,9 @@
 				7514F4E527FBB24600F8CAFF /* ZenDots-Regular.ttf */,
 				4417F0D027F39C8900B28F10 /* AppDelegate.swift */,
 				4417F0D227F39C8900B28F10 /* SceneDelegate.swift */,
-				4417F0D427F39C8900B28F10 /* ViewController.swift */,
+				4417F0D427F39C8900B28F10 /* GameGridViewController.swift */,
 				4417F0D627F39C8900B28F10 /* Main.storyboard */,
+				7508A11C27FE913500D9152B /* GameGridViewCell.swift */,
 				4417F0D927F39C8F00B28F10 /* Assets.xcassets */,
 				4417F0DB27F39C8F00B28F10 /* LaunchScreen.storyboard */,
 				4417F0DE27F39C8F00B28F10 /* Info.plist */,
@@ -413,8 +416,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7508A11D27FE913500D9152B /* GameGridViewCell.swift in Sources */,
 				C226285A27F3A95000F7D640 /* LoginViewController.swift in Sources */,
-				4417F0D527F39C8900B28F10 /* ViewController.swift in Sources */,
+				4417F0D527F39C8900B28F10 /* GameGridViewController.swift in Sources */,
 				4417F0D127F39C8900B28F10 /* AppDelegate.swift in Sources */,
 				4417F0D327F39C8900B28F10 /* SceneDelegate.swift in Sources */,
 			);
