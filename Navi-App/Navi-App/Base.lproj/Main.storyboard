@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -118,27 +118,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="settings-logo" translatesAutoresizingMaskIntoConstraints="NO" id="dzx-tN-ZOG">
-                                <rect key="frame" x="364" y="54" width="30" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="XHO-6f-wDb"/>
-                                    <constraint firstAttribute="width" constant="30" id="h2D-Qu-WCn"/>
-                                </constraints>
-                            </imageView>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile-photo" translatesAutoresizingMaskIntoConstraints="NO" id="CKH-QT-9bQ">
-                                <rect key="frame" x="319" y="54" width="30" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="ReH-Nm-ekg"/>
-                                    <constraint firstAttribute="width" constant="30" id="f1y-JA-Pjf"/>
-                                </constraints>
-                            </imageView>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="search-icon" translatesAutoresizingMaskIntoConstraints="NO" id="0Gj-NY-Jr0">
-                                <rect key="frame" x="277" y="56" width="27" height="27"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="27" id="1BE-ce-yjk"/>
-                                    <constraint firstAttribute="width" constant="27" id="uT7-bk-ByL"/>
-                                </constraints>
-                            </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home-app-logo" translatesAutoresizingMaskIntoConstraints="NO" id="ad2-un-v0n">
                                 <rect key="frame" x="20" y="49" width="70" height="40"/>
                                 <constraints>
@@ -222,29 +201,67 @@
                             <constraint firstItem="ad2-un-v0n" firstAttribute="top" secondItem="25E-PR-aiW" secondAttribute="top" constant="49" id="3hc-cc-910"/>
                             <constraint firstItem="7mD-cS-JaX" firstAttribute="top" secondItem="25E-PR-aiW" secondAttribute="top" constant="67" id="6Gm-hV-t0p"/>
                             <constraint firstItem="xAH-6X-6Ne" firstAttribute="top" secondItem="25E-PR-aiW" secondAttribute="top" constant="55" id="6cc-n9-CO4"/>
-                            <constraint firstItem="CKH-QT-9bQ" firstAttribute="leading" secondItem="0Gj-NY-Jr0" secondAttribute="trailing" constant="15" id="AkH-o3-3ZD"/>
                             <constraint firstItem="XDn-cu-mB1" firstAttribute="top" secondItem="7mD-cS-JaX" secondAttribute="bottom" constant="-30" id="HN1-wO-cCU"/>
                             <constraint firstItem="7mD-cS-JaX" firstAttribute="leading" secondItem="GD8-D0-nRg" secondAttribute="leading" id="I32-xe-ivr"/>
-                            <constraint firstItem="dzx-tN-ZOG" firstAttribute="top" secondItem="25E-PR-aiW" secondAttribute="top" constant="54" id="OWl-vE-lUX"/>
                             <constraint firstItem="XDn-cu-mB1" firstAttribute="leading" secondItem="GD8-D0-nRg" secondAttribute="leading" id="QIx-fP-mLg"/>
                             <constraint firstAttribute="bottom" secondItem="XDn-cu-mB1" secondAttribute="bottom" id="V4E-Kb-GWa"/>
-                            <constraint firstItem="dzx-tN-ZOG" firstAttribute="leading" secondItem="CKH-QT-9bQ" secondAttribute="trailing" constant="15" id="W5N-48-ydl"/>
-                            <constraint firstItem="CKH-QT-9bQ" firstAttribute="top" secondItem="25E-PR-aiW" secondAttribute="top" constant="54" id="ari-Ub-fZ9"/>
-                            <constraint firstItem="GD8-D0-nRg" firstAttribute="trailing" secondItem="dzx-tN-ZOG" secondAttribute="trailing" constant="20" id="psz-83-nf3"/>
                             <constraint firstItem="ad2-un-v0n" firstAttribute="leading" secondItem="25E-PR-aiW" secondAttribute="leading" constant="20" id="rNb-La-qS7"/>
-                            <constraint firstItem="0Gj-NY-Jr0" firstAttribute="top" secondItem="25E-PR-aiW" secondAttribute="top" constant="56" id="sfu-C2-bsJ"/>
                             <constraint firstItem="7mD-cS-JaX" firstAttribute="trailing" secondItem="GD8-D0-nRg" secondAttribute="trailing" id="tOX-QH-sSY"/>
                             <constraint firstItem="XDn-cu-mB1" firstAttribute="trailing" secondItem="GD8-D0-nRg" secondAttribute="trailing" id="yGW-KI-kZa"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="ayQ-cf-afx"/>
+                    <navigationItem key="navigationItem" id="ayQ-cf-afx">
+                        <rightBarButtonItems>
+                            <barButtonItem title="Settings" image="settings-logo" id="gXI-pu-o86">
+                                <color key="tintColor" red="1" green="0.24718680009999999" blue="0.17234885320000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <segue destination="189-6v-JDC" kind="presentation" id="ELD-kB-5ae"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Profile" image="profile-photo-filled" id="NZc-uU-W3q">
+                                <color key="tintColor" red="1" green="0.24718680009999999" blue="0.17234885320000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </barButtonItem>
+                            <barButtonItem title="Search" image="search-icon" id="DBg-ZU-MoR">
+                                <color key="tintColor" red="1" green="0.24718680009999999" blue="0.17234885320000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="XDn-cu-mB1" id="WdN-lS-2wm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XrC-ll-Dw7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1698.5507246376812" y="53.571428571428569"/>
+            <point key="canvasLocation" x="1655" y="54"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="7Mi-Vn-iK3">
+            <objects>
+                <viewController id="Bk2-M1-Aph" userLabel="Settings View Controller" customClass="SettingsViewController" customModule="Navi_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NUw-6y-Mm1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="settings-background" translatesAutoresizingMaskIntoConstraints="NO" id="MXE-m0-sMY">
+                                <rect key="frame" x="0.0" y="-56" width="414" height="952"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="xeS-j1-FKk"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Settings" id="h9z-Tz-1Xk">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="red-arrow" id="TQB-tb-h9l">
+                            <color key="tintColor" red="1" green="0.24718680009999999" blue="0.17234885320000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="backButton:" destination="Bk2-M1-Aph" id="UvV-wn-BAf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6X7-cl-2BD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3679.7101449275365" y="53.571428571428569"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vvv-St-Bl7">
@@ -265,16 +282,36 @@
             </objects>
             <point key="canvasLocation" x="828.98550724637687" y="53.571428571428569"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="jTO-cZ-Nek">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="189-6v-JDC" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="nZ4-j8-fO5">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Bk2-M1-Aph" kind="relationship" relationship="rootViewController" id="xdi-yE-1AW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HDX-oD-ppj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2769.5652173913045" y="53.571428571428569"/>
+        </scene>
     </scenes>
     <resources>
         <image name="home-app-logo" width="241" height="140"/>
         <image name="login-background" width="967" height="2094"/>
         <image name="login-logo" width="713" height="713"/>
         <image name="login-textfields" width="330" height="50"/>
-        <image name="profile-photo" width="70" height="70"/>
-        <image name="search-icon" width="54" height="54"/>
+        <image name="profile-photo-filled" width="25" height="25"/>
+        <image name="red-arrow" width="30" height="31"/>
+        <image name="search-icon" width="25" height="25"/>
         <image name="seperator" width="967" height="7"/>
-        <image name="settings-logo" width="66" height="67"/>
+        <image name="settings-background" width="1271" height="1968"/>
+        <image name="settings-logo" width="25" height="25"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
