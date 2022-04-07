@@ -299,7 +299,7 @@ An app that allows users to search through their favorite games to write and rea
 
 ## Milestone Deliverables
 
-###Sprint 1 - Unit 10
+### Sprint 1 - Unit 10
 
 **Launch Screen**
 - [x] Finalize logo
