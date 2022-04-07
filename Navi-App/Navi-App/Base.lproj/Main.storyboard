@@ -21,68 +21,114 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LoginBack" translatesAutoresizingMaskIntoConstraints="NO" id="94P-rx-7Xg">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login-background" translatesAutoresizingMaskIntoConstraints="NO" id="94P-rx-7Xg">
                                 <rect key="frame" x="0.0" y="-4" width="414" height="905"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Username" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mbA-rw-zeW">
-                                <rect key="frame" x="42" y="540" width="330" height="52"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Password" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uu4-Ww-wtS">
-                                <rect key="frame" x="42" y="626" width="330" height="49"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="49" id="WWi-J0-r7C"/>
-                                </constraints>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="Username" borderStyle="line" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" background="login-textfields" translatesAutoresizingMaskIntoConstraints="NO" id="mbA-rw-zeW">
+                                <rect key="frame" x="42" y="548" width="330" height="38.5"/>
+                                <color key="backgroundColor" red="0.047058824450000002" green="0.0039215688589999999" blue="0.0039215688589999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="ZenDots-Regular" family="Zen Dots" pointSize="24"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                        <color key="value" systemColor="systemRedColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="Password" borderStyle="line" placeholder="Password" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" background="login-textfields" translatesAutoresizingMaskIntoConstraints="NO" id="uu4-Ww-wtS">
+                                <rect key="frame" x="42" y="620.5" width="330" height="38.5"/>
+                                <color key="backgroundColor" red="0.047058824450000002" green="0.0039215688589999999" blue="0.0039215688589999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="ZenDots-Regular" family="Zen Dots" pointSize="24"/>
+                                <textInputTraits key="textInputTraits" textContentType="password"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                        <color key="value" systemColor="systemRedColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y5D-fE-8YE" userLabel="RegisterButton">
-                                <rect key="frame" x="84" y="831" width="246" height="31"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="31" id="uzb-ZA-D8x"/>
-                                </constraints>
+                                <rect key="frame" x="84" y="820" width="246" height="42"/>
+                                <color key="backgroundColor" red="0.047058824450000002" green="0.0039215688589999999" blue="0.0039215688589999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain"/>
+                                <buttonConfiguration key="configuration" style="plain" title="REGISTER">
+                                    <backgroundConfiguration key="background" cornerRadius="0.0" strokeWidth="2.5">
+                                        <color key="backgroundColor" red="0.047058824450000002" green="0.0039215688589999999" blue="0.0039215688589999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="strokeColor" red="0.90196073060000004" green="0.2235293984" blue="0.1725490093" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </backgroundConfiguration>
+                                    <fontDescription key="titleFontDescription" name="ZenDots-Regular" family="Zen Dots" pointSize="23"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="onRegister:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sxL-If-iKc"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lFF-Md-CFN" userLabel="LoginButton">
-                                <rect key="frame" x="139" y="701" width="136" height="37"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lFF-Md-CFN" userLabel="LoginButton">
+                                <rect key="frame" x="139" y="685" width="136" height="42"/>
+                                <color key="backgroundColor" red="0.75686274509803919" green="0.19215686274509802" blue="0.19215686274509802" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain"/>
+                                <buttonConfiguration key="configuration" style="plain" title="LOGIN">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" red="0.75686274509999996" green="0.19215686269999999" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </backgroundConfiguration>
+                                    <fontDescription key="titleFontDescription" name="ZenDots-Regular" family="Zen Dots" pointSize="23"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="onLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NN2-jH-y1P"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" ambiguous="YES" image="login-logo" id="0BG-ae-7Ml">
+                                <rect key="frame" x="54" y="144" width="304" height="304"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="304" id="D3v-tZ-ru5"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="94P-rx-7Xg" secondAttribute="bottom" constant="-5" id="3fl-9w-BMH"/>
-                            <constraint firstItem="y5D-fE-8YE" firstAttribute="centerX" secondItem="94P-rx-7Xg" secondAttribute="centerX" id="6dh-7N-v97"/>
-                            <constraint firstItem="y5D-fE-8YE" firstAttribute="centerX" secondItem="uu4-Ww-wtS" secondAttribute="centerX" id="Ciq-3e-8vs"/>
-                            <constraint firstItem="y5D-fE-8YE" firstAttribute="top" secondItem="lFF-Md-CFN" secondAttribute="bottom" constant="93" id="F2r-dW-vmp"/>
-                            <constraint firstItem="uu4-Ww-wtS" firstAttribute="top" secondItem="mbA-rw-zeW" secondAttribute="bottom" constant="34" id="Q9e-uU-Jr6"/>
-                            <constraint firstItem="94P-rx-7Xg" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="V11-zi-41C"/>
-                            <constraint firstItem="y5D-fE-8YE" firstAttribute="centerX" secondItem="mbA-rw-zeW" secondAttribute="centerX" id="Zja-oh-hSp"/>
-                            <constraint firstItem="uu4-Ww-wtS" firstAttribute="leading" secondItem="mbA-rw-zeW" secondAttribute="leading" id="a1I-Vm-EdB"/>
-                            <constraint firstItem="y5D-fE-8YE" firstAttribute="centerX" secondItem="lFF-Md-CFN" secondAttribute="centerX" id="cAX-ii-lyY"/>
-                            <constraint firstAttribute="bottom" secondItem="uu4-Ww-wtS" secondAttribute="bottom" constant="221" id="eJq-mv-AIo"/>
-                            <constraint firstItem="y5D-fE-8YE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="84" id="kgu-kY-eB1"/>
-                            <constraint firstItem="94P-rx-7Xg" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="-4" id="nzc-8G-zka"/>
-                            <constraint firstItem="lFF-Md-CFN" firstAttribute="top" secondItem="uu4-Ww-wtS" secondAttribute="bottom" constant="26" id="p43-3a-Ff6"/>
-                            <constraint firstItem="uu4-Ww-wtS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="42" id="qh6-gh-ReA"/>
-                            <constraint firstItem="y5D-fE-8YE" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="sRX-QO-dTg"/>
-                            <constraint firstItem="94P-rx-7Xg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="vI2-9o-8LI"/>
+                            <constraint firstItem="mbA-rw-zeW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="42" id="1Gr-ua-beK"/>
+                            <constraint firstItem="0BG-ae-7Ml" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="1du-e6-MYr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="y5D-fE-8YE" secondAttribute="trailing" constant="84" id="8Y9-L9-MvI"/>
+                            <constraint firstItem="94P-rx-7Xg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="CuN-ri-e2F"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lFF-Md-CFN" secondAttribute="trailing" constant="139" id="DHl-xD-3ye"/>
+                            <constraint firstItem="uu4-Ww-wtS" firstAttribute="top" secondItem="mbA-rw-zeW" secondAttribute="bottom" constant="34" id="FtY-Nf-wMl"/>
+                            <constraint firstAttribute="bottom" secondItem="94P-rx-7Xg" secondAttribute="bottom" constant="-5" id="JJY-ul-6Fj"/>
+                            <constraint firstItem="y5D-fE-8YE" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Rja-0h-esr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uu4-Ww-wtS" secondAttribute="trailing" constant="42" id="Tba-7r-RHm"/>
+                            <constraint firstItem="94P-rx-7Xg" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="XiX-wb-06g"/>
+                            <constraint firstItem="y5D-fE-8YE" firstAttribute="top" secondItem="lFF-Md-CFN" secondAttribute="bottom" constant="93" id="cC2-VS-Rgk"/>
+                            <constraint firstItem="94P-rx-7Xg" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="-4" id="g8c-cj-yxm"/>
+                            <constraint firstItem="y5D-fE-8YE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="84" id="iSB-e7-qrj"/>
+                            <constraint firstItem="uu4-Ww-wtS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="42" id="jIO-gy-wjy"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mbA-rw-zeW" secondAttribute="trailing" constant="42" id="lfP-rC-84r"/>
+                            <constraint firstItem="lFF-Md-CFN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="139" id="nsB-1K-d3o"/>
+                            <constraint firstItem="lFF-Md-CFN" firstAttribute="top" secondItem="uu4-Ww-wtS" secondAttribute="bottom" constant="26" id="wAg-Tl-Dm4"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="appLogo" destination="0BG-ae-7Ml" id="Gxd-Ph-3B3"/>
+                        <outlet property="loginBtn" destination="lFF-Md-CFN" id="07n-ih-nbb"/>
                         <outlet property="passwordField" destination="uu4-Ww-wtS" id="8Yu-n2-uee"/>
+                        <outlet property="registerBtn" destination="y5D-fE-8YE" id="1EU-1j-7EZ"/>
                         <outlet property="usernameField" destination="mbA-rw-zeW" id="jha-az-lJW"/>
                         <segue destination="3rg-h0-pji" kind="presentation" identifier="loginSegue" id="seP-5g-mpC"/>
                     </connections>
@@ -127,9 +173,14 @@
         </scene>
     </scenes>
     <resources>
-        <image name="LoginBack" width="1332" height="1938"/>
+        <image name="login-background" width="967" height="2094"/>
+        <image name="login-logo" width="713" height="713"/>
+        <image name="login-textfields" width="330" height="50"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
