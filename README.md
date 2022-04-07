@@ -5,7 +5,7 @@
 2. [Product Spec](#Product-Spec)
 3. [Wireframes](#Wireframes)
 4. [Schema](#Schema)
-5. [Milestone Deliverables](#Milestone Deliverables)
+5. [Milestone Deliverables](#Milestone-Deliverables)
 
 ## Overview
 ### Description
