@@ -30,17 +30,6 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="ZenDots-Regular" family="Zen Dots" pointSize="24"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="0"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
-                                        <color key="value" systemColor="systemRedColor"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                                        <integer key="value" value="2"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="Password" borderStyle="line" placeholder="Password" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" background="login-textfields" translatesAutoresizingMaskIntoConstraints="NO" id="uu4-Ww-wtS">
                                 <rect key="frame" x="42" y="620.5" width="330" height="38.5"/>
@@ -48,17 +37,6 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="ZenDots-Regular" family="Zen Dots" pointSize="24"/>
                                 <textInputTraits key="textInputTraits" textContentType="password"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="0"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
-                                        <color key="value" systemColor="systemRedColor"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                                        <integer key="value" value="2"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y5D-fE-8YE" userLabel="RegisterButton">
                                 <rect key="frame" x="84" y="820" width="246" height="42"/>
@@ -97,9 +75,6 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="304" id="D3v-tZ-ru5"/>
                                 </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
-                                </userDefinedRuntimeAttributes>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -125,10 +100,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="appLogo" destination="0BG-ae-7Ml" id="Gxd-Ph-3B3"/>
-                        <outlet property="loginBtn" destination="lFF-Md-CFN" id="07n-ih-nbb"/>
                         <outlet property="passwordField" destination="uu4-Ww-wtS" id="8Yu-n2-uee"/>
-                        <outlet property="registerBtn" destination="y5D-fE-8YE" id="1EU-1j-7EZ"/>
                         <outlet property="usernameField" destination="mbA-rw-zeW" id="jha-az-lJW"/>
                         <segue destination="3rg-h0-pji" kind="presentation" identifier="loginSegue" id="seP-5g-mpC"/>
                     </connections>
@@ -178,9 +150,6 @@
         <image name="login-textfields" width="330" height="50"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
