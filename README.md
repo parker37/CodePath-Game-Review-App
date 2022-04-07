@@ -2,9 +2,10 @@
 
 ## Table of Contents
 1. [Overview](#Overview)
-1. [Product Spec](#Product-Spec)
-1. [Wireframes](#Wireframes)
-2. [Schema](#Schema)
+2. [Product Spec](#Product-Spec)
+3. [Wireframes](#Wireframes)
+4. [Schema](#Schema)
+5. [Milestone Deliverables](#Milestones)
 
 ## Overview
 ### Description
@@ -109,8 +110,6 @@ An app that allows users to search through their favorite games to write and rea
 ### [BONUS] Digital Wireframes & Mockups
 ![](https://i.imgur.com/DeXdj6Y.png)
 
-
-### [BONUS] Interactive Prototype
 
 ## Schema 
 
@@ -297,4 +296,33 @@ An app that allows users to search through their favorite games to write and rea
    }
    ```
 
-- [OPTIONAL: List endpoints if using existing API such as Yelp]
+
+## Milestone Deliverables
+
+###Sprint 1 - Unit 10
+
+**Launch Screen**
+- [x] Finalize logo
+- [x] User can see styled launch screen upon opening app
+- [x] Add app icon to app assets
+- [x] User can see logo on phone's home screen
+![](milestone-walkthroughs/Milestone-1_Unit10/launch-screen-walkthrough.gif)
+![](milestone-walkthroughs/Milestone-1_Unit10/appIcons.jpg)
+
+**Login/Register Screen**
+- [x] User can log-in
+- [x] User can register
+- [x] Login page visuals
+- [x] Connect Login to Parse Back4App
+![](milestone-walkthroughs/Milestone-1_Unit10/login-register-walkthrough.gif)
+![](milestone-walkthroughs/Milestone-1_Unit10/parse-1.jpg)
+![](milestone-walkthroughs/Milestone-1_Unit10/parse-2.jpg)
+![](milestone-walkthroughs/Milestone-1_Unit10/parse-3.jpg)
+
+**Home Screen Pt. 1**
+- [x] Setup Grid View for Movies List
+- [x] Setup Cell View for Movie
+- [x] Add visual design
+- [x] User can see collection view of a few games
+![](milestone-walkthroughs/Milestone-1_Unit10/home-screen-walkthrough.gif)
+![](milestone-walkthroughs/Milestone-1_Unit10/home-screen-collection-view-design.jpg)
