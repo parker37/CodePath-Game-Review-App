@@ -46,13 +46,13 @@ class GameDetailsViewController: UIViewController, UITableViewDelegate, UITableV
 
         let center = NotificationCenter.default
         center.addObserver(self, selector: #selector(keyboardWillBeHidden(note:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
 
     }
     
-    @IBAction func unwindDetail (_ sender: UIStoryboardSegue){
-        tableView.reloadData()
+    @IBAction func unwindToDetails(seg: UIStoryboardSegue) {
+        viewDidAppear(true)
     }
-    
     
     @objc func keyboardWillBeHidden(note: Notification){
         commentBar.inputTextView.text = nil
@@ -73,7 +73,7 @@ class GameDetailsViewController: UIViewController, UITableViewDelegate, UITableV
         
         let query = PFQuery(className: "Reviews")
         query.whereKey("game", equalTo: selectedGame)
-        query.includeKeys(["author", "reviewText", "comments"])
+        query.includeKeys(["author", "reviewText", "comments","comments.author"])
         query.findObjectsInBackground {(reviews, error) in
             if (reviews != nil){
                 
