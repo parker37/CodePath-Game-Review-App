@@ -34,6 +34,7 @@ class GameGridViewController: UIViewController, UICollectionViewDataSource, UICo
     @IBOutlet weak var collectionView: UICollectionView!
     
     var games : [[String:Any]] = []
+    var currentGame: PFObject!
     
     
     
@@ -160,6 +161,15 @@ class GameGridViewController: UIViewController, UICollectionViewDataSource, UICo
         if let dest = segue.destination as? GameDetailsViewController, let index = collectionView.indexPathsForSelectedItems?.first {
             
             let game = games[index.row]
+            let query = PFQuery(className: "Games")
+            query.whereKey("gameName", equalTo: game["name"] as? String)
+            query.findObjectsInBackground { list, Error in
+                if (list != nil){
+                    dest.selectedGame = list![0]
+                }
+            }
+            
+            
             dest.titleSelection = game["name"] as? String
             //dest.descriptionSelection = game["storyline"] as? String
            /*

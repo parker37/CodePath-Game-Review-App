@@ -22,6 +22,7 @@ class GameDetailsViewController: UIViewController, UITableViewDelegate, UITableV
     var coverSelection: UIImageView!
     var reviews = [PFObject]()
     var selectedReview: PFObject!
+    var selectedGame: PFObject!
     
     
     let commentBar = MessageInputBar()
@@ -71,11 +72,11 @@ class GameDetailsViewController: UIViewController, UITableViewDelegate, UITableV
         super.viewDidAppear(animated)
         
         let query = PFQuery(className: "Reviews")
-        query.includeKeys(["author", "comments", "comments.author"])
-        query.limit = 20
-        
+        query.whereKey("game", equalTo: selectedGame)
+        query.includeKeys(["author", "reviewText", "comments"])
         query.findObjectsInBackground {(reviews, error) in
             if (reviews != nil){
+                
                 self.reviews = reviews!
                 self.tableView.reloadData()
             }
@@ -131,7 +132,6 @@ class GameDetailsViewController: UIViewController, UITableViewDelegate, UITableV
             let cell = tableView.dequeueReusableCell(withIdentifier: "ReviewCell") as! ReviewCell
             
             let user = review["author"] as! PFUser
-            
             cell.usernameLabel.text = user.username
             cell.reviewLabel.text = review["reviewText"] as? String
        
@@ -168,6 +168,19 @@ class GameDetailsViewController: UIViewController, UITableViewDelegate, UITableV
    
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let dest = segue.destination as? ReviewViewController{
+            
+            let query = PFQuery(className: "Games")
+            query.whereKey("gameName", equalTo: self.titleSelection!)
+            query.findObjectsInBackground {(chosenGame, error) in
+                if (chosenGame != nil){
+                    dest.selectedGame = chosenGame![0]
+                }
+            }
+            
+        }
+    }
 
     /*
     // MARK: - Navigation
