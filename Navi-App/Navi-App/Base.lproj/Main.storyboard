@@ -212,16 +212,16 @@
                     </view>
                     <navigationItem key="navigationItem" id="ayQ-cf-afx">
                         <rightBarButtonItems>
-                            <barButtonItem title="Settings" image="settings-logo" id="gXI-pu-o86">
+                            <barButtonItem title="Settings" image="gearshape" catalog="system" id="gXI-pu-o86">
                                 <color key="tintColor" red="1" green="0.24718680009999999" blue="0.17234885320000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
-                                    <segue destination="189-6v-JDC" kind="presentation" id="ELD-kB-5ae"/>
+                                    <segue destination="Ap8-26-6nS" kind="presentation" id="MyZ-uA-EF8"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem title="Profile" image="profile-photo-filled" id="NZc-uU-W3q">
+                            <barButtonItem title="Profile" image="person.circle" catalog="system" id="NZc-uU-W3q">
                                 <color key="tintColor" red="1" green="0.24718680009999999" blue="0.17234885320000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </barButtonItem>
-                            <barButtonItem title="Search" image="search-icon" id="DBg-ZU-MoR">
+                            <barButtonItem title="Search" image="magnifyingglass" catalog="system" id="DBg-ZU-MoR">
                                 <color key="tintColor" red="1" green="0.24718680009999999" blue="0.17234885320000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </barButtonItem>
                         </rightBarButtonItems>
@@ -235,33 +235,123 @@
             <point key="canvasLocation" x="1655" y="54"/>
         </scene>
         <!--Settings View Controller-->
-        <scene sceneID="7Mi-Vn-iK3">
+        <scene sceneID="wKH-uR-Gbu">
             <objects>
-                <viewController id="Bk2-M1-Aph" userLabel="Settings View Controller" customClass="SettingsViewController" customModule="Navi_App" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="NUw-6y-Mm1">
+                <viewController modalPresentationStyle="fullScreen" id="Ap8-26-6nS" customClass="SettingsViewController" customModule="Navi_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ytx-fs-QWj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="settings-background" translatesAutoresizingMaskIntoConstraints="NO" id="MXE-m0-sMY">
-                                <rect key="frame" x="0.0" y="-56" width="414" height="952"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="settings-background" translatesAutoresizingMaskIntoConstraints="NO" id="zhI-lk-SjQ">
+                                <rect key="frame" x="0.0" y="-10" width="414" height="906"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oRk-pd-ZNI">
+                                <rect key="frame" x="31" y="44" width="47" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="arrowshape.turn.up.left" catalog="system"/>
+                                <connections>
+                                    <action selector="backButton:" destination="Ap8-26-6nS" eventType="touchUpInside" id="KWp-y1-MB5"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vGd-6x-Sg6">
+                                <rect key="frame" x="146" y="44" width="106" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="ZenDots-Regular" family="Zen Dots" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="person.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="1WV-dW-zr3">
+                                <rect key="frame" x="107" y="123.5" width="201" height="201"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="1" green="0.24718680009999999" blue="0.17234885320000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Enter username..." borderStyle="line" textAlignment="right" clearsOnBeginEditing="YES" minimumFontSize="17" background="login-textfields" translatesAutoresizingMaskIntoConstraints="NO" id="V9I-xI-OBR">
+                                <rect key="frame" x="31" y="409" width="353" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="ZenDots-Regular" family="Zen Dots" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gq8-Au-cdi">
+                                <rect key="frame" x="44" y="388" width="137" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="ZenDots-Regular" family="Zen Dots" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Enter password..." borderStyle="line" textAlignment="right" clearsOnBeginEditing="YES" minimumFontSize="17" background="login-textfields" translatesAutoresizingMaskIntoConstraints="NO" id="Dne-yB-698">
+                                <rect key="frame" x="31" y="485" width="353" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="ZenDots-Regular" family="Zen Dots" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Password:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VHL-7N-c3Y">
+                                <rect key="frame" x="44" y="498" width="119" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="ZenDots-Regular" family="Zen Dots" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WZI-i1-dtB">
+                                <rect key="frame" x="108" y="333" width="183" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Change Photo">
+                                    <backgroundConfiguration key="background" strokeWidth="2.5">
+                                        <color key="strokeColor" red="1" green="0.24718680009999999" blue="0.17234885320000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </backgroundConfiguration>
+                                    <fontDescription key="titleFontDescription" name="ZenDots-Regular" family="Zen Dots" pointSize="18"/>
+                                    <color key="baseBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="onCameraButton:" destination="Ap8-26-6nS" eventType="touchUpInside" id="zoK-y5-ryX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0pA-6J-Olh">
+                                <rect key="frame" x="158" y="583" width="88" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Save">
+                                    <backgroundConfiguration key="background" strokeWidth="2.5">
+                                        <color key="strokeColor" red="1" green="0.24718680009999999" blue="0.17234885320000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </backgroundConfiguration>
+                                    <fontDescription key="titleFontDescription" name="ZenDots-Regular" family="Zen Dots" pointSize="20"/>
+                                    <color key="baseBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="onSaveButton:" destination="Ap8-26-6nS" eventType="touchUpInside" id="Dvt-QF-f0K"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="dark mode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vsO-Gh-mqQ">
+                                <rect key="frame" x="140" y="713" width="119" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="ZenDots-Regular" family="Zen Dots" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CwS-W1-fwn">
+                                <rect key="frame" x="175" y="743" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="onTintColor" red="0.91900334210000001" green="0.22716549550000001" blue="0.1583891721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </switch>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="xeS-j1-FKk"/>
+                        <viewLayoutGuide key="safeArea" id="OpR-qu-hWP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Settings" id="h9z-Tz-1Xk">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="red-arrow" id="TQB-tb-h9l">
-                            <color key="tintColor" red="1" green="0.24718680009999999" blue="0.17234885320000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <connections>
-                                <action selector="backButton:" destination="Bk2-M1-Aph" id="UvV-wn-BAf"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <connections>
+                        <outlet property="changePhotoButton" destination="WZI-i1-dtB" id="03R-go-m5U"/>
+                        <outlet property="passwordTextField" destination="Dne-yB-698" id="YMb-O4-8TK"/>
+                        <outlet property="profileImageView" destination="1WV-dW-zr3" id="rBM-tf-8vv"/>
+                        <outlet property="usernameTextField" destination="V9I-xI-OBR" id="kGW-38-LUe"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6X7-cl-2BD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xrg-EM-Oew" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3679.7101449275365" y="53.571428571428569"/>
+            <point key="canvasLocation" x="2757.971014492754" y="53.571428571428569"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vvv-St-Bl7">
@@ -282,36 +372,18 @@
             </objects>
             <point key="canvasLocation" x="828.98550724637687" y="53.571428571428569"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="jTO-cZ-Nek">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="189-6v-JDC" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="nZ4-j8-fO5">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Bk2-M1-Aph" kind="relationship" relationship="rootViewController" id="xdi-yE-1AW"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HDX-oD-ppj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2769.5652173913045" y="53.571428571428569"/>
-        </scene>
     </scenes>
     <resources>
+        <image name="arrowshape.turn.up.left" catalog="system" width="128" height="106"/>
+        <image name="gearshape" catalog="system" width="128" height="121"/>
         <image name="home-app-logo" width="241" height="140"/>
         <image name="login-background" width="967" height="2094"/>
         <image name="login-logo" width="713" height="713"/>
         <image name="login-textfields" width="330" height="50"/>
-        <image name="profile-photo-filled" width="25" height="25"/>
-        <image name="red-arrow" width="30" height="31"/>
-        <image name="search-icon" width="25" height="25"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="person.circle" catalog="system" width="128" height="121"/>
         <image name="seperator" width="967" height="7"/>
         <image name="settings-background" width="1271" height="1968"/>
-        <image name="settings-logo" width="25" height="25"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
