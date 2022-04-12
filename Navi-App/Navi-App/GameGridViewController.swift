@@ -34,17 +34,35 @@ class GameGridViewController: UIViewController, UICollectionViewDataSource, UICo
     @IBOutlet weak var collectionView: UICollectionView!
     
     var games : [[String:Any]] = []
-    
-    
+            
     
 //    var coverURLs = [String]();
-    var numOfGames = 7;
+    var numOfGames = 12;
+    var gameResponse = [GamesAPIResponse]();
+    struct GamesAPIResponse: Codable {
+        var id: Int
+        var cover: Int?
+        var name: String
+        var total_rating: Double
+        var summary: String
+        
+        init(from decoder: Decoder) throws {
+            let values = try decoder.container(keyedBy: CodingKeys.self);
+            id = try values.decode(Int.self, forKey: .id)
+            cover = try values.decodeIfPresent(Int.self, forKey: .cover) ?? -1
+            name = try values.decode(String.self, forKey: .name)
+            total_rating = try values.decode(Double.self, forKey: .total_rating)
+            summary = try values.decode(String.self, forKey: .summary)
+        }
+    }
     
-//    struct GamesAPIResponse: Decodable {
-//        var id: Int
-//        var cover: Int
-//        var name: String
-//    }
+    struct CoverArtResponse: Decodable {
+        var id: Int
+        var game: Int
+        var height: Int
+        var image_id: String
+        var width: Int
+    }
     
 //    struct CoverArtAPIResponse: Decodable {
 //        var url: String
@@ -61,79 +79,60 @@ class GameGridViewController: UIViewController, UICollectionViewDataSource, UICo
         layout.minimumInteritemSpacing = 15;
         
         
-        /*
+        
         let url = URL(string: "https://api.igdb.com/v4/games")!;
         var request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10);
         request.httpMethod = "POST";
-        request.httpBody = "fields name,cover; limit \(numOfGames);".data(using: .utf8, allowLossyConversion: false)
+        request.httpBody = "fields name,cover,total_rating,summary; where category = 0 & total_rating > 90 & total_rating_count > 1000; limit \(numOfGames); sort id desc;".data(using: .utf8, allowLossyConversion: false)
         request.setValue("abo18sby3sk9q1khik70u4tb10xzvj", forHTTPHeaderField: "Client-ID")
         request.setValue("Bearer d8ne6x6cx1a377ktjn6o0gdg6yzk9v", forHTTPHeaderField: "Authorization");
-        
+
         let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main);
         let task = session.dataTask(with: request) { (data, response, error) in
              // This will run when the network request returns
              if let error = error {
                     print(error.localizedDescription)
              } else if let data = data {
-                 let dataDict = try! String(data: data, encoding: .utf8)
+                 let decoder = JSONDecoder();
+//                 let dataDict = try! String(data: data, encoding: .utf8)
+                 let info = try! decoder.decode(Array<GamesAPIResponse>.self, from: data)
 //                 self.games = try! JSONDecoder().decode(Array<GamesAPIResponse>.self, from: data)
                  
 //                 print("\nresponse: \n\(self.games)")
-                 print("\nresponse: \n\(String(describing: dataDict))")
-                 
-//                 self.getImages();
-                 
-                 self.collectionView.reloadData()
+                 print("\nCount: \(info.count)\nresponse: \n\(info)");
+                 self.getImages(info);
              }
         }
         task.resume()
-        */
-        
-        let query = PFQuery(className:"Games")
-        query.findObjectsInBackground { (gameList: [PFObject]?, error: Error?) in
-           if let error = error {
-              print(error.localizedDescription)
-           } else if let gameList = gameList {
-               
-               gameList.forEach { game in
-                   
-                   var newGame: Dictionary<String,String>;
-                   
-                   newGame = [
-                    "name": game["gameName"] as! String,
-                    "coverURL": game["coverArtURL"] as! String
-                   ]
-                   
-                   self.games.append(newGame);
-
-                   self.collectionView.reloadData()
-               }
-               
-               while self.games.count < 12 {
-                   self.games.append(["name":"More Coming Soon","coverURL":"none"]);
-                   
-               }
-           }
-        }
-        
-        print(self.games)
     }
     
-    /*
-    func getImages() {
-        var idList = "(\(games[0].id)";
+    
+    func getImages(_ gameResponse: Array<GamesAPIResponse>) {
         
-        games.forEach { (game) in
-            idList += ", \(game.id)";
+        
+        var idList = ""
+        var first = true;
+        
+        gameResponse.forEach { (game) in
+            if (game.cover != -1) {
+                if (first) {
+                    idList += "(\(gameResponse[0].cover!)";
+                    first = false;
+                } else {
+                    idList += ", \(game.cover!)";
+                }
+            }
         }
+        
         idList += ")";
         
         print(idList)
         
+
         let url = URL(string: "https://api.igdb.com/v4/covers")!;
         var request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10);
         request.httpMethod = "POST";
-        request.httpBody = "fields name; where id = \(idList) limit \(numOfGames);".data(using: .utf8, allowLossyConversion: false)
+        request.httpBody = "fields id,game,width,image_id,height; where id = \(idList); sort game desc;".data(using: .utf8, allowLossyConversion: false)
         request.setValue("abo18sby3sk9q1khik70u4tb10xzvj", forHTTPHeaderField: "Client-ID")
         request.setValue("Bearer d8ne6x6cx1a377ktjn6o0gdg6yzk9v", forHTTPHeaderField: "Authorization");
         
@@ -143,18 +142,35 @@ class GameGridViewController: UIViewController, UICollectionViewDataSource, UICo
              if let error = error {
                     print(error.localizedDescription)
              } else if let data = data {
-                 let coverDict = try! JSONDecoder().decode(Array<CoverArtAPIResponse>.self, from: data)
-                 
+                 let decoder = JSONDecoder();
+//               let dataDict = try! String(data: data, encoding: .utf8)
+                 let info = try! decoder.decode(Array<CoverArtResponse>.self, from: data)
+                
                  var ind = 0;
-                 for cover in coverDict {
-                     self.coverURLs[ind] = cover.url;
-                     ind += 1;
+                 gameResponse.forEach { game in
+                     if (ind < info.count) {
+                         if (game.cover! == info[ind].id) {
+                             let newGame = [
+                                "name": game.name,
+                                "coverURL": "https://images.igdb.com/igdb/image/upload/t_cover_big/\(info[ind].image_id).png",
+                                "summary": game.summary,
+                                "coverWidth": info[ind].width,
+                                "coverHeight": info[ind].height
+                             ] as [String : Any];
+                             
+                             self.games.append(newGame)
+                             
+                             ind += 1;
+                         }
+                     }
                  }
+                 print("\nTotal: \(self.games.count)\nGames Dictionary:\n\(self.games)");
+                 self.collectionView.reloadData();
              }
         }
         task.resume()
     }
-    */
+
 
 
 }
