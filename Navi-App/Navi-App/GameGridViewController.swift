@@ -37,7 +37,7 @@ class GameGridViewController: UIViewController, UICollectionViewDataSource, UICo
             
     
 //    var coverURLs = [String]();
-    var numOfGames = 12;
+    var numOfGames = 30;
     var gameResponse = [GamesAPIResponse]();
     struct GamesAPIResponse: Codable {
         var id: Int
@@ -81,7 +81,7 @@ class GameGridViewController: UIViewController, UICollectionViewDataSource, UICo
         
         
         let url = URL(string: "https://api.igdb.com/v4/games")!;
-        var request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10);
+        var request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 20);
         request.httpMethod = "POST";
         request.httpBody = "fields name,cover,total_rating,summary; where category = 0 & total_rating > 90 & total_rating_count > 1000; limit \(numOfGames); sort id desc;".data(using: .utf8, allowLossyConversion: false)
         request.setValue("abo18sby3sk9q1khik70u4tb10xzvj", forHTTPHeaderField: "Client-ID")
@@ -130,7 +130,7 @@ class GameGridViewController: UIViewController, UICollectionViewDataSource, UICo
         
 
         let url = URL(string: "https://api.igdb.com/v4/covers")!;
-        var request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10);
+        var request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 20);
         request.httpMethod = "POST";
         request.httpBody = "fields id,game,width,image_id,height; where id = \(idList); sort game desc;".data(using: .utf8, allowLossyConversion: false)
         request.setValue("abo18sby3sk9q1khik70u4tb10xzvj", forHTTPHeaderField: "Client-ID")
