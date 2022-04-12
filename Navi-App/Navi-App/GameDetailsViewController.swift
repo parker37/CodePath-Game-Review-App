@@ -8,6 +8,7 @@
 import UIKit
 import Parse
 import MessageInputBar
+import AlamofireImage
 
 class GameDetailsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MessageInputBarDelegate {
 
@@ -22,7 +23,7 @@ class GameDetailsViewController: UIViewController, UITableViewDelegate, UITableV
     var coverSelection: UIImageView!
     var reviews = [PFObject]()
     var selectedReview: PFObject!
-    var selectedGame: PFObject!
+    var selectedGame: [String:Any]!
     
     
     let commentBar = MessageInputBar()
@@ -39,15 +40,12 @@ class GameDetailsViewController: UIViewController, UITableViewDelegate, UITableV
         tableView.dataSource = self
         
         titleLabel.text = titleSelection
-        //descriptionLabel.text = descriptionSelection
-//        coverArtView.image = coverSelection.image
+        descriptionLabel.text = (selectedGame["summary"]! as! String)
         
         tableView.keyboardDismissMode = .interactive
 
         let center = NotificationCenter.default
         center.addObserver(self, selector: #selector(keyboardWillBeHidden(note:)), name: UIResponder.keyboardWillHideNotification, object: nil)
-        
-
     }
     
     @IBAction func unwindToDetails(seg: UIStoryboardSegue) {
@@ -72,10 +70,10 @@ class GameDetailsViewController: UIViewController, UITableViewDelegate, UITableV
         super.viewDidAppear(animated)
         
         let query = PFQuery(className: "Reviews")
-        query.whereKey("game", equalTo: selectedGame)
+        query.whereKey("game", equalTo: selectedGame["name"]!)
         query.includeKeys(["author", "author.profileImage", "reviewText", "comments","comments.author", "comments.profileImage"])
         query.findObjectsInBackground {(reviews, error) in
-            if (reviews != nil){
+            if (reviews != nil) {
                 
                 self.reviews = reviews!
                 self.tableView.reloadData()
@@ -189,15 +187,9 @@ class GameDetailsViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let dest = segue.destination as? ReviewViewController{
-            
-            let query = PFQuery(className: "Games")
-            query.whereKey("gameName", equalTo: self.titleSelection!)
-            query.findObjectsInBackground {(chosenGame, error) in
-                if (chosenGame != nil){
-                    dest.selectedGame = chosenGame![0]
-                }
-            }
+        if let dest = segue.destination as? ReviewViewController {
+
+            dest.selectedGame = (selectedGame["name"] as! String)
             
         }
     }

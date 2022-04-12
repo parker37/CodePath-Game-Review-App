@@ -12,7 +12,7 @@ class ReviewViewController: UIViewController {
 
     @IBOutlet weak var reviewField: UITextField!
     
-    var selectedGame: PFObject!
+    var selectedGame: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,12 +25,11 @@ class ReviewViewController: UIViewController {
         
         post["reviewText"] = reviewField.text!
         post["author"] = PFUser.current()!
-        post["game"] = selectedGame
+        post["game"] = ""
         //post["rating"] =
         
-        selectedGame.add(post, forKey: "reviews")
         
-        selectedGame.saveInBackground { (success, error) in
+        post.saveInBackground { (success, error) in
             if (success){
                 self.dismiss(animated: true, completion: nil)
                 print("saved!")
