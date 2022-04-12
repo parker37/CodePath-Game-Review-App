@@ -1,11 +1,7 @@
 {
   "images" : [
     {
-<<<<<<< HEAD:Navi-App/Navi-App/Assets.xcassets/settings-logo.imageset/Contents.json
-      "filename" : "settings-logo.png",
-=======
       "filename" : "Rating_Stars.png",
->>>>>>> Detail_Screen:Navi-App/Navi-App/Assets.xcassets/Rating_Stars.imageset/Contents.json
       "idiom" : "universal",
       "scale" : "1x"
     },

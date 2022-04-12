@@ -169,8 +169,8 @@ class GameGridViewController: UIViewController, UICollectionViewDataSource, UICo
                 }
             }
             
-            
             dest.titleSelection = game["name"] as? String
+            
             //dest.descriptionSelection = game["storyline"] as? String
            /*
             if (game["coverURL"] as! String == "none") {

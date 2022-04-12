@@ -18,10 +18,18 @@ class SettingsViewController: UIViewController, UIImagePickerControllerDelegate,
     
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
         
+        super.viewDidLoad()
+        let user = PFUser.current()!
+        if (user["profileImage"] != nil) {
+            let imageFile = user["profileImage"] as! PFFileObject
+            let urlString = imageFile.url!
+            let url = URL(string: urlString)!
+            
+            profileImageView.af.setImage(withURL: url)
+        } else {
+            profileImageView.image = UIImage(named: "profile-photo-filled.png")
+        }
     }
     
 

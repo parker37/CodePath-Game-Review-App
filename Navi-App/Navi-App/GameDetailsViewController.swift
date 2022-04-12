@@ -40,7 +40,7 @@ class GameDetailsViewController: UIViewController, UITableViewDelegate, UITableV
         
         titleLabel.text = titleSelection
         //descriptionLabel.text = descriptionSelection
-        //coverArtView.image = coverSelection.image
+//        coverArtView.image = coverSelection.image
         
         tableView.keyboardDismissMode = .interactive
 
@@ -73,7 +73,7 @@ class GameDetailsViewController: UIViewController, UITableViewDelegate, UITableV
         
         let query = PFQuery(className: "Reviews")
         query.whereKey("game", equalTo: selectedGame)
-        query.includeKeys(["author", "reviewText", "comments","comments.author"])
+        query.includeKeys(["author", "author.profileImage", "reviewText", "comments","comments.author", "comments.profileImage"])
         query.findObjectsInBackground {(reviews, error) in
             if (reviews != nil){
                 
@@ -134,6 +134,17 @@ class GameDetailsViewController: UIViewController, UITableViewDelegate, UITableV
             let user = review["author"] as! PFUser
             cell.usernameLabel.text = user.username
             cell.reviewLabel.text = review["reviewText"] as? String
+            
+            
+            if (user["profileImage"] != nil) {
+                let imageFile = user["profileImage"] as! PFFileObject
+                let urlString = imageFile.url!
+                let url = URL(string: urlString)!
+                
+                cell.profileView.af.setImage(withURL: url)
+            } else {
+                cell.profileView.image = UIImage(named: "profile-photo.png")
+            }
        
             return cell
         }
@@ -145,7 +156,16 @@ class GameDetailsViewController: UIViewController, UITableViewDelegate, UITableV
             let user = comment["author"] as! PFUser
             cell.nameLabel.text = user.username
             
-            return cell
+            if (user["profileImage"] != nil) {
+                let imageFile = user["profileImage"] as! PFFileObject
+                let urlString = imageFile.url!
+                let url = URL(string: urlString)!
+                
+                cell.profilePicView.af.setImage(withURL: url)
+            } else {
+                cell.profilePicView.image = UIImage(named: "profile-photo-filled.png")
+            }
+                        return cell
         }
         else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "AddCommentCell")!
