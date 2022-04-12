@@ -26,22 +26,22 @@ class SettingsViewController: UIViewController, UIImagePickerControllerDelegate,
     
 
     @IBAction func onSaveButton(_ sender: Any) {
-        let userInfo = PFUser.current()
+        let userInfo = PFUser.current()!
         
-        userInfo?.username = usernameTextField.text!
-        userInfo?.password = passwordTextField.text!
+        userInfo["username"] = usernameTextField.text!
+        userInfo["password"] = passwordTextField.text!
         
         
-        let imageQuery = PFQuery(className: "User")
-        imageQuery.whereKeyExists("profileImage")
-        imageQuery.whereKey("profileImage", doesNotMatch: imageQuery)
+//        let imageQuery = PFQuery(className: "User")
+//        imageQuery.whereKeyExists("profileImage")
+//        imageQuery.whereKey("profileImage", doesNotMatch: imageQuery)
 
         let imageData = profileImageView.image!.pngData()
         let file = PFFileObject(name: "profileImage.png", data: imageData!)
         
-        userInfo?["profileImage"] = file
+        userInfo["profileImage"] = file
         
-        userInfo?.saveInBackground { (success, error) in
+        userInfo.saveInBackground() { (success, error) in
             if success {
                 self.dismiss(animated: true, completion: nil)
                 print("saved!")
