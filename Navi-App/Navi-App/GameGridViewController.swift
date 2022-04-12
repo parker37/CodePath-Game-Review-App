@@ -34,6 +34,7 @@ class GameGridViewController: UIViewController, UICollectionViewDataSource, UICo
     @IBOutlet weak var collectionView: UICollectionView!
     
     var games : [[String:Any]] = []
+    var currentGame: PFObject!
     
     
     
@@ -155,7 +156,31 @@ class GameGridViewController: UIViewController, UICollectionViewDataSource, UICo
         task.resume()
     }
     */
-
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let dest = segue.destination as? GameDetailsViewController, let index = collectionView.indexPathsForSelectedItems?.first {
+            
+            let game = games[index.row]
+            let query = PFQuery(className: "Games")
+            query.whereKey("gameName", equalTo: game["name"] as? String)
+            query.findObjectsInBackground { list, Error in
+                if (list != nil){
+                    dest.selectedGame = list![0]
+                }
+            }
+            
+            
+            dest.titleSelection = game["name"] as? String
+            //dest.descriptionSelection = game["storyline"] as? String
+           /*
+            if (game["coverURL"] as! String == "none") {
+                dest.coverSelection.image = UIImage(named: "missingCoverArt.png")
+            } else {
+                let coverArtURL = URL(string: game["coverURL"] as! String);
+                dest.coverSelection.af.setImage(withURL: coverArtURL!)
+            }
+            */
+        }
+    }
 }
 

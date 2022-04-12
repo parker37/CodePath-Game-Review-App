@@ -1,11 +1,7 @@
 {
   "images" : [
     {
-<<<<<<< HEAD:Navi-App/Navi-App/Assets.xcassets/red-arrow.imageset/Contents.json
-      "filename" : "red-arrow.png",
-=======
-      "filename" : "Gold_Star.png",
->>>>>>> Detail_Screen:Navi-App/Navi-App/Assets.xcassets/Gold_Star.imageset/Contents.json
+      "filename" : "Bob_at_Easel.jpeg",
       "idiom" : "universal",
       "scale" : "1x"
     },

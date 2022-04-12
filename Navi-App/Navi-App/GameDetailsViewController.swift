@@ -1,0 +1,195 @@
+//
+//  GameDetailsViewController.swift
+//  Navi-App
+//
+//  Created by Brandon Mack on 4/7/22.
+//
+
+import UIKit
+import Parse
+import MessageInputBar
+
+class GameDetailsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MessageInputBarDelegate {
+
+    @IBOutlet weak var coverArtView: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var ratingLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var tableView: UITableView!
+    
+    var titleSelection: String!
+    var descriptionSelection: String!
+    var coverSelection: UIImageView!
+    var reviews = [PFObject]()
+    var selectedReview: PFObject!
+    var selectedGame: PFObject!
+    
+    
+    let commentBar = MessageInputBar()
+    var showsCommentBar = false
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        commentBar.inputTextView.placeholder = "Add a comment..."
+        commentBar.sendButton.title = "Post"
+        commentBar.delegate = self
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        titleLabel.text = titleSelection
+        //descriptionLabel.text = descriptionSelection
+        //coverArtView.image = coverSelection.image
+        
+        tableView.keyboardDismissMode = .interactive
+
+        let center = NotificationCenter.default
+        center.addObserver(self, selector: #selector(keyboardWillBeHidden(note:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+
+    }
+    
+    @IBAction func unwindToDetails(seg: UIStoryboardSegue) {
+        viewDidAppear(true)
+    }
+    
+    @objc func keyboardWillBeHidden(note: Notification){
+        commentBar.inputTextView.text = nil
+        showsCommentBar = false
+        becomeFirstResponder()
+    }
+    
+    override var inputAccessoryView: UIView? {
+        return commentBar
+    }
+    
+    override var canBecomeFirstResponder: Bool {
+        return showsCommentBar
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        let query = PFQuery(className: "Reviews")
+        query.whereKey("game", equalTo: selectedGame)
+        query.includeKeys(["author", "reviewText", "comments","comments.author"])
+        query.findObjectsInBackground {(reviews, error) in
+            if (reviews != nil){
+                
+                self.reviews = reviews!
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
+    
+    func messageInputBar(_ inputBar: MessageInputBar, didPressSendButtonWith text: String) {
+        //create the comment
+        let comment = PFObject(className: "Comments")
+        
+        comment["text"] = text
+        comment["post"] = selectedReview
+        comment["author"] = PFUser.current()!
+
+        selectedReview.add(comment, forKey: "comments")
+
+        selectedReview.saveInBackground{(success, error) in
+            if (success){
+              print("Comment saved")
+            }
+            else {
+              print("Error saving comment")
+            }
+
+        }
+        
+        tableView.reloadData()
+        
+        commentBar.inputTextView.text = nil
+        showsCommentBar = false
+        becomeFirstResponder()
+        commentBar.inputTextView.resignFirstResponder()
+    }
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        let review = reviews[section]
+        let comments = (review["comments"] as? [PFObject]) ?? []
+        return comments.count + 2
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return reviews.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let review = reviews[indexPath.section]
+        let comments = (review["comments"] as? [PFObject]) ?? []
+        
+        if (indexPath.row == 0) {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ReviewCell") as! ReviewCell
+            
+            let user = review["author"] as! PFUser
+            cell.usernameLabel.text = user.username
+            cell.reviewLabel.text = review["reviewText"] as? String
+       
+            return cell
+        }
+        else if (indexPath.row <= comments.count){
+            let cell = tableView.dequeueReusableCell(withIdentifier: "CommentCell") as! CommentCell
+            let comment = comments[indexPath.row - 1 ]
+            cell.commentLabel.text = comment["text"] as? String
+            
+            let user = comment["author"] as! PFUser
+            cell.nameLabel.text = user.username
+            
+            return cell
+        }
+        else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "AddCommentCell")!
+            
+            return cell
+        }
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let review = reviews[indexPath.section]
+        let comments = (review["comments"] as? [PFObject]) ?? []
+        
+        if (indexPath.row == comments.count + 1){
+            showsCommentBar = true
+            becomeFirstResponder()
+            commentBar.inputTextView.becomeFirstResponder()
+            
+            selectedReview = review
+        }
+   
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let dest = segue.destination as? ReviewViewController{
+            
+            let query = PFQuery(className: "Games")
+            query.whereKey("gameName", equalTo: self.titleSelection!)
+            query.findObjectsInBackground {(chosenGame, error) in
+                if (chosenGame != nil){
+                    dest.selectedGame = chosenGame![0]
+                }
+            }
+            
+        }
+    }
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
+}
