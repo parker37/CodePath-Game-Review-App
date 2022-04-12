@@ -222,6 +222,9 @@
                             </barButtonItem>
                             <barButtonItem title="Profile" image="person.circle" catalog="system" id="NZc-uU-W3q">
                                 <color key="tintColor" red="1" green="0.24718680009999999" blue="0.17234885320000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <segue destination="yOG-DV-79x" kind="show" id="hAm-4g-8IC"/>
+                                </connections>
                             </barButtonItem>
                             <barButtonItem title="Search" image="magnifyingglass" catalog="system" id="DBg-ZU-MoR">
                                 <color key="tintColor" red="1" green="0.24718680009999999" blue="0.17234885320000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -235,6 +238,74 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XrC-ll-Dw7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1655" y="54"/>
+        </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="3nm-9U-4ed">
+            <objects>
+                <viewController id="yOG-DV-79x" customClass="ProfileViewController" customModule="Navi_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DdB-4N-eJQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Profile" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yXr-lh-fs7">
+                                <rect key="frame" x="110" y="88" width="194" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="ZenDots-Regular" family="Zen Dots" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TOP GENRE:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Psx-hz-5t9">
+                                <rect key="frame" x="20" y="341" width="199" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="ZenDots-Regular" family="Zen Dots" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TOP GAME:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3OT-g7-9G4">
+                                <rect key="frame" x="20" y="406" width="199" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="ZenDots-Regular" family="Zen Dots" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rbm-iQ-ZhI">
+                                <rect key="frame" x="240" y="341" width="154" height="46"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </pickerView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Enter a Game" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5aW-uO-Ma5">
+                                <rect key="frame" x="240" y="406" width="154" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dOQ-up-ozt">
+                                <rect key="frame" x="284" y="460" width="66" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Save">
+                                    <fontDescription key="titleFontDescription" name="ZenDots-Regular" family="Zen Dots" pointSize="13"/>
+                                    <color key="baseForegroundColor" systemColor="systemRedColor"/>
+                                </buttonConfiguration>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="profile-photo-filled" translatesAutoresizingMaskIntoConstraints="NO" id="inx-7Y-nSF">
+                                <rect key="frame" x="145" y="169" width="125" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="V7T-KO-8T1"/>
+                        <color key="backgroundColor" red="0.047058824450000002" green="0.0039215688589999999" blue="0.0039215688589999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="wiw-Aa-Yhp"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YKe-0O-lWe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2671.0144927536235" y="-582.58928571428567"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="wKH-uR-Gbu">
@@ -353,9 +424,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xrg-EM-Oew" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2720" y="-76"/>
+            <point key="canvasLocation" x="2719" y="54"/>
         </scene>
-        <!--Game Details View Controller-->
+        <!--Game Details-->
         <scene sceneID="IHz-Tx-qKn">
             <objects>
                 <viewController id="whX-AN-HGz" customClass="GameDetailsViewController" customModule="Navi_App" customModuleProvider="target" sceneMemberID="viewController">
@@ -546,7 +617,7 @@
                         <viewLayoutGuide key="safeArea" id="yDk-gb-Gut"/>
                         <color key="backgroundColor" systemColor="labelColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="5bW-Qo-3IZ"/>
+                    <navigationItem key="navigationItem" title="Game Details" id="5bW-Qo-3IZ"/>
                     <connections>
                         <outlet property="coverArtView" destination="Do4-aS-CmF" id="Lbf-CH-J2g"/>
                         <outlet property="descriptionLabel" destination="JEA-Xo-Hpg" id="SAk-gc-eas"/>
@@ -557,7 +628,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DXO-4i-IXR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2814" y="571"/>
+            <point key="canvasLocation" x="2719" y="745"/>
         </scene>
         <!--Review View Controller-->
         <scene sceneID="gE8-dm-yN4">
@@ -612,7 +683,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vW9-Ao-2WZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="h2S-Kp-frT" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3505.7971014492755" y="53.571428571428569"/>
+            <point key="canvasLocation" x="3722" y="745"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vvv-St-Bl7">
@@ -655,6 +726,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

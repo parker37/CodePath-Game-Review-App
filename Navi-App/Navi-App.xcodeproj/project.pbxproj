@@ -22,6 +22,7 @@
 		6F61F094AC5F7119EF29B528 /* Pods_Navi_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0375613B7C8EFB7AACF97709 /* Pods_Navi_App.framework */; };
 		7508A11D27FE913500D9152B /* GameGridViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7508A11C27FE913500D9152B /* GameGridViewCell.swift */; };
 		7514F4E327FBB24600F8CAFF /* ZenDots-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7514F4E527FBB24600F8CAFF /* ZenDots-Regular.ttf */; };
+		75165806280556230007E8C0 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75165805280556220007E8C0 /* ProfileViewController.swift */; };
 		C226285A27F3A95000F7D640 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C226285927F3A95000F7D640 /* LoginViewController.swift */; };
 		C25EE028280203FA00F4F29D /* ReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25EE027280203FA00F4F29D /* ReviewCell.swift */; };
 		C25EE02A28021F4300F4F29D /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25EE02928021F4300F4F29D /* ReviewViewController.swift */; };
@@ -65,9 +66,11 @@
 		4417F0E727F39C9000B28F10 /* Navi_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navi_AppTests.swift; sourceTree = "<group>"; };
 		4417F0ED27F39C9000B28F10 /* Navi-AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Navi-AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4417F0F127F39C9000B28F10 /* Navi_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navi_AppUITests.swift; sourceTree = "<group>"; };
-		4417F0F327F39C9000B28F10 /* Navi_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navi_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };		4464414227FF86B8007F9192 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		4417F0F327F39C9000B28F10 /* Navi_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navi_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		4464414227FF86B8007F9192 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		7508A11C27FE913500D9152B /* GameGridViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameGridViewCell.swift; sourceTree = "<group>"; };
 		7514F4E427FBB24600F8CAFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file; name = Base; path = "Base.lproj/ZenDots-Regular.ttf"; sourceTree = "<group>"; };
+		75165805280556220007E8C0 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		BE8F76D99EBA2A7331EC9501 /* Pods-Navi-App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Navi-App.debug.xcconfig"; path = "Target Support Files/Pods-Navi-App/Pods-Navi-App.debug.xcconfig"; sourceTree = "<group>"; };
 		C226285927F3A95000F7D640 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C25EE027280203FA00F4F29D /* ReviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCell.swift; sourceTree = "<group>"; };
@@ -149,6 +152,7 @@
 				4417F0D227F39C8900B28F10 /* SceneDelegate.swift */,
 				4417F0D427F39C8900B28F10 /* GameGridViewController.swift */,
 				4417F0D627F39C8900B28F10 /* Main.storyboard */,
+				75165805280556220007E8C0 /* ProfileViewController.swift */,
 				7508A11C27FE913500D9152B /* GameGridViewCell.swift */,
 				4417F0D927F39C8F00B28F10 /* Assets.xcassets */,
 				4417F0DB27F39C8F00B28F10 /* LaunchScreen.storyboard */,
@@ -436,6 +440,7 @@
 				4417F0D527F39C8900B28F10 /* GameGridViewController.swift in Sources */,
 				4417F0D127F39C8900B28F10 /* AppDelegate.swift in Sources */,
 				C25EE02C280237EC00F4F29D /* CommentCell.swift in Sources */,
+				75165806280556230007E8C0 /* ProfileViewController.swift in Sources */,
 				4417F0D327F39C8900B28F10 /* SceneDelegate.swift in Sources */,
 				4464414327FF86B8007F9192 /* SettingsViewController.swift in Sources */,
 				C25EE02A28021F4300F4F29D /* ReviewViewController.swift in Sources */,
