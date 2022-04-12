@@ -297,9 +297,10 @@
                                     <action selector="onSave:" destination="yOG-DV-79x" eventType="touchUpInside" id="9Xi-lK-XcB"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="profile-photo-filled" translatesAutoresizingMaskIntoConstraints="NO" id="inx-7Y-nSF">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="person.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="inx-7Y-nSF">
                                 <rect key="frame" x="145" y="169" width="125" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.91746991870000005" green="0.26639365999999998" blue="0.1909689507" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="V7T-KO-8T1"/>

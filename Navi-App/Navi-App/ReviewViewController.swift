@@ -25,7 +25,7 @@ class ReviewViewController: UIViewController {
         
         post["reviewText"] = reviewField.text!
         post["author"] = PFUser.current()!
-        post["game"] = ""
+        post["game"] = selectedGame
         //post["rating"] =
         
         
