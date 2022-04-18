@@ -10,15 +10,23 @@ import AlamofireImage
 import Parse
 
 class GameGridViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return games.count;
+        return totalGames;
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GameGridViewCell", for: indexPath) as! GameGridViewCell;
-        let game = games[indexPath.item];
         
+        var game: [String:Any] = [:]
+        
+        if isSearching {
+            game = searchedGames[indexPath.item]
+        } else {
+            game = games[indexPath.item];
+        }
+
         if (game["coverURL"] as! String == "none") {
             cell.coverArt.image = UIImage(named: "missingCoverArt.png");
         } else {
@@ -36,8 +44,13 @@ class GameGridViewController: UIViewController, UICollectionViewDataSource, UICo
     var games : [[String:Any]] = []
     var currentGame: PFObject!
     
+    var gameSearch: String = "";
+    var isSearching: Bool = false;
+    var searchedGames: [[String:Any]] = []
+    
 //    var coverURLs = [String]();
-    var numOfGames = 30;
+    var numOfGames = 15;
+    var totalGames = 0;
     var gameResponse = [GamesAPIResponse]();
     struct GamesAPIResponse: Codable {
         var id: Int
@@ -78,7 +91,8 @@ class GameGridViewController: UIViewController, UICollectionViewDataSource, UICo
         layout.minimumLineSpacing = 15;
         layout.minimumInteritemSpacing = 15;
         
-        
+        isSearching = false;
+        searchTextField.clearButtonMode = UITextField.ViewMode.whileEditing
         
         let url = URL(string: "https://api.igdb.com/v4/games")!;
         var request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 20);
@@ -164,6 +178,8 @@ class GameGridViewController: UIViewController, UICollectionViewDataSource, UICo
                          }
                      }
                  }
+                 self.totalGames = self.games.count
+                 
                  print("\nTotal: \(self.games.count)\nGames Dictionary:\n\(self.games)");
                  self.collectionView.reloadData();
              }
@@ -173,8 +189,12 @@ class GameGridViewController: UIViewController, UICollectionViewDataSource, UICo
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let dest = segue.destination as? GameDetailsViewController, let index = collectionView.indexPathsForSelectedItems?.first {
-            
-            let game = self.games[index.row]
+            var game: [String:Any];
+            if (isSearching) {
+                game = self.searchedGames[index.row]
+            } else {
+                game = self.games[index.row]
+            }
             print(game)
             dest.selectedGame = game
             
@@ -191,5 +211,56 @@ class GameGridViewController: UIViewController, UICollectionViewDataSource, UICo
             
         }
     }
+    
+    @IBOutlet weak var searchTextField: UITextField!
+    
+    @IBAction func onSearch(_ sender: Any) {
+        if searchTextField.isHidden {
+            searchTextField.isHidden = false;
+            let myConst = view.constraintWith(identifier: "topConst");
+            myConst?.constant = -25;
+            
+        } else {
+            searchTextField.isHidden = true;
+            let myConst = view.constraintWith(identifier: "topConst");
+            myConst?.constant = -60;
+        }
+    }
+    
+    @IBAction func onSearching(_ sender: Any) {
+        if let clear = searchTextField.value(forKey: "clearButton") as? UIButton {
+            clear.tintColor = .red
+            clear.setImage(UIImage(systemName: "xmark.circle")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        }
+        
+        searchedGames = []
+        isSearching = true;
+        
+        let gameName = searchTextField.text!;
+        
+        if gameName == "" {
+            isSearching = false;
+            totalGames = games.count
+        } else {
+            games.forEach { game in
+                if (game["name"] as! String).contains(gameName) {
+                    searchedGames.append(game)
+                }
+            }
+            totalGames = searchedGames.count
+        }
+        collectionView.reloadData()
+    }
+    @IBAction func onStopSearching(_ sender: Any) {
+        print("------------------------\nediting ended\n---------------------------")
+    }
+    
+    
+    
 }
 
+extension UIView {
+    func constraintWith(identifier: String) -> NSLayoutConstraint?{
+        return self.constraints.first(where: {$0.identifier == identifier})
+    }
+}

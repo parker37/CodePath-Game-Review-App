@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3rg-h0-pji">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -142,7 +142,7 @@
                                 </constraints>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="XDn-cu-mB1">
-                                <rect key="frame" x="0.0" y="99" width="414" height="797"/>
+                                <rect key="frame" x="0.0" y="103" width="414" height="785"/>
                                 <color key="backgroundColor" red="0.047058824450000002" green="0.0039215688589999999" blue="0.0039215688589999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="15" id="163-l1-bC9">
                                     <size key="itemSize" width="124" height="220"/>
@@ -195,6 +195,20 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Search Games..." borderStyle="bezel" clearsOnBeginEditing="YES" minimumFontSize="11" background="login-textfields" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="GEY-Fu-tkw">
+                                <rect key="frame" x="20" y="69" width="374" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="T9O-La-wXB"/>
+                                    <constraint firstAttribute="width" constant="374" id="gRj-VV-MUq"/>
+                                </constraints>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="ZenDots-Regular" family="Zen Dots" pointSize="13"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="continue" enablesReturnKeyAutomatically="YES" textContentType="name"/>
+                                <connections>
+                                    <action selector="onSearching:" destination="wfG-Wf-yCB" eventType="editingChanged" id="PMt-XY-6KS"/>
+                                    <action selector="onStopSearching:" destination="wfG-Wf-yCB" eventType="touchUpOutside" id="rjU-pR-RjR"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="GD8-D0-nRg"/>
                         <color key="backgroundColor" red="0.047058824450000002" green="0.0039215688589999999" blue="0.0039215688589999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -203,10 +217,12 @@
                             <constraint firstItem="ad2-un-v0n" firstAttribute="top" secondItem="25E-PR-aiW" secondAttribute="top" constant="49" id="3hc-cc-910"/>
                             <constraint firstItem="7mD-cS-JaX" firstAttribute="top" secondItem="25E-PR-aiW" secondAttribute="top" constant="67" id="6Gm-hV-t0p"/>
                             <constraint firstItem="xAH-6X-6Ne" firstAttribute="top" secondItem="25E-PR-aiW" secondAttribute="top" constant="55" id="6cc-n9-CO4"/>
-                            <constraint firstItem="XDn-cu-mB1" firstAttribute="top" secondItem="7mD-cS-JaX" secondAttribute="bottom" constant="-30" id="HN1-wO-cCU"/>
+                            <constraint firstItem="XDn-cu-mB1" firstAttribute="top" secondItem="GEY-Fu-tkw" secondAttribute="bottom" id="HN1-wO-cCU"/>
                             <constraint firstItem="7mD-cS-JaX" firstAttribute="leading" secondItem="GD8-D0-nRg" secondAttribute="leading" id="I32-xe-ivr"/>
                             <constraint firstItem="XDn-cu-mB1" firstAttribute="leading" secondItem="GD8-D0-nRg" secondAttribute="leading" id="QIx-fP-mLg"/>
-                            <constraint firstAttribute="bottom" secondItem="XDn-cu-mB1" secondAttribute="bottom" id="V4E-Kb-GWa"/>
+                            <constraint firstAttribute="bottom" secondItem="XDn-cu-mB1" secondAttribute="bottom" constant="8" id="V4E-Kb-GWa"/>
+                            <constraint firstItem="GEY-Fu-tkw" firstAttribute="top" secondItem="7mD-cS-JaX" secondAttribute="bottom" constant="-60" identifier="topConst" id="Y1Q-fX-kg7"/>
+                            <constraint firstItem="GEY-Fu-tkw" firstAttribute="centerX" secondItem="25E-PR-aiW" secondAttribute="centerX" id="dAh-O7-GbR"/>
                             <constraint firstItem="ad2-un-v0n" firstAttribute="leading" secondItem="25E-PR-aiW" secondAttribute="leading" constant="20" id="rNb-La-qS7"/>
                             <constraint firstItem="7mD-cS-JaX" firstAttribute="trailing" secondItem="GD8-D0-nRg" secondAttribute="trailing" id="tOX-QH-sSY"/>
                             <constraint firstItem="XDn-cu-mB1" firstAttribute="trailing" secondItem="GD8-D0-nRg" secondAttribute="trailing" id="yGW-KI-kZa"/>
@@ -228,16 +244,20 @@
                             </barButtonItem>
                             <barButtonItem title="Search" image="magnifyingglass" catalog="system" id="DBg-ZU-MoR">
                                 <color key="tintColor" red="1" green="0.24718680009999999" blue="0.17234885320000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="onSearch:" destination="wfG-Wf-yCB" id="0kd-Tg-Un3"/>
+                                </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="XDn-cu-mB1" id="WdN-lS-2wm"/>
+                        <outlet property="searchTextField" destination="GEY-Fu-tkw" id="wUp-UC-doz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XrC-ll-Dw7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1655" y="54"/>
+            <point key="canvasLocation" x="1653.6231884057972" y="53.571428571428569"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="3nm-9U-4ed">
@@ -598,14 +618,14 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="AddCommentCell" id="lbs-9e-blP">
-                                        <rect key="frame" x="0.0" y="292.5" width="414" height="37.5"/>
+                                        <rect key="frame" x="0.0" y="292.5" width="414" height="37"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lbs-9e-blP" id="PZH-41-Nic">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="37.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="37"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a comment..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c5l-33-Ml3">
-                                                    <rect key="frame" x="16" y="8" width="390" height="21.5"/>
+                                                    <rect key="frame" x="16" y="8" width="390" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
