@@ -41,6 +41,7 @@ class GameDetailsViewController: UIViewController, UITableViewDelegate, UITableV
         
         titleLabel.text = titleSelection
         descriptionLabel.text = (selectedGame["summary"]! as! String)
+        coverArtView.af.setImage(withURL: URL(string: selectedGame["coverURL"] as! String)!)
         
         tableView.keyboardDismissMode = .interactive
 
