@@ -252,6 +252,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="XDn-cu-mB1" id="WdN-lS-2wm"/>
+                        <outlet property="searchButton" destination="DBg-ZU-MoR" id="4Rv-bf-CeH"/>
                         <outlet property="searchTextField" destination="GEY-Fu-tkw" id="wUp-UC-doz"/>
                     </connections>
                 </viewController>
