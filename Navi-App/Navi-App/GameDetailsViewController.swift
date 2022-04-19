@@ -24,6 +24,8 @@ class GameDetailsViewController: UIViewController, UITableViewDelegate, UITableV
     var reviews = [PFObject]()
     var selectedReview: PFObject!
     var selectedGame: [String:Any]!
+    var overallRating: Int! = 0
+    var ratingCounter: PFObject!
     
     
     let commentBar = MessageInputBar()
@@ -72,12 +74,27 @@ class GameDetailsViewController: UIViewController, UITableViewDelegate, UITableV
         
         let query = PFQuery(className: "Reviews")
         query.whereKey("game", equalTo: selectedGame["name"]!)
-        query.includeKeys(["author", "author.profileImage", "reviewText", "comments","comments.author", "comments.profileImage"])
+        query.includeKeys(["author", "author.profileImage", "reviewText", "comments","comments.author", "comments.profileImage","rating"])
         query.findObjectsInBackground {(reviews, error) in
             if (reviews != nil) {
                 
                 self.reviews = reviews!
                 self.tableView.reloadData()
+                
+                
+                let totalReviews: Int! = reviews?.count;
+                
+                reviews?.forEach({ review in
+                    self.overallRating += review["rating"] as! Int;
+                })
+                
+                if (self.overallRating > 0){
+                    self.ratingLabel.text = "\(self.overallRating / totalReviews)/5"
+                }
+                else{
+                    self.ratingLabel.text = "No Ratings"
+                }
+
             }
         }
     }
@@ -134,6 +151,58 @@ class GameDetailsViewController: UIViewController, UITableViewDelegate, UITableV
             cell.usernameLabel.text = user.username
             cell.reviewLabel.text = review["reviewText"] as? String
             
+            if (review["rating"] as! Int == 2){
+                cell.cellStar2.image = cell.cellStar2.image?.withRenderingMode(.alwaysTemplate)
+                cell.cellStar2.tintColor = UIColor.systemYellow
+                
+                cell.cellStar3.image = cell.cellStar3.image?.withRenderingMode(.alwaysTemplate)
+                cell.cellStar3.tintColor = UIColor.lightGray
+                
+                cell.cellStar4.image = cell.cellStar4.image?.withRenderingMode(.alwaysTemplate)
+                cell.cellStar4.tintColor = UIColor.lightGray
+                
+                cell.cellStar5.image = cell.cellStar5.image?.withRenderingMode(.alwaysTemplate)
+                cell.cellStar5.tintColor = UIColor.lightGray
+            }
+            else if (review["rating"] as! Int == 3){
+                cell.cellStar2.image = cell.cellStar2.image?.withRenderingMode(.alwaysTemplate)
+                cell.cellStar2.tintColor = UIColor.systemYellow
+                
+                cell.cellStar3.image = cell.cellStar3.image?.withRenderingMode(.alwaysTemplate)
+                cell.cellStar3.tintColor = UIColor.systemYellow
+                
+                cell.cellStar4.image = cell.cellStar4.image?.withRenderingMode(.alwaysTemplate)
+                cell.cellStar4.tintColor = UIColor.lightGray
+                
+                cell.cellStar5.image = cell.cellStar5.image?.withRenderingMode(.alwaysTemplate)
+                cell.cellStar5.tintColor = UIColor.lightGray
+            }
+            else if (review["rating"] as! Int == 4){
+                cell.cellStar2.image = cell.cellStar2.image?.withRenderingMode(.alwaysTemplate)
+                cell.cellStar2.tintColor = UIColor.systemYellow
+                
+                cell.cellStar3.image = cell.cellStar3.image?.withRenderingMode(.alwaysTemplate)
+                cell.cellStar3.tintColor = UIColor.systemYellow
+                
+                cell.cellStar4.image = cell.cellStar4.image?.withRenderingMode(.alwaysTemplate)
+                cell.cellStar4.tintColor = UIColor.systemYellow
+                
+                cell.cellStar5.image = cell.cellStar5.image?.withRenderingMode(.alwaysTemplate)
+                cell.cellStar5.tintColor = UIColor.lightGray
+            }
+            else if (review["rating"] as! Int == 5){
+                cell.cellStar2.image = cell.cellStar2.image?.withRenderingMode(.alwaysTemplate)
+                cell.cellStar2.tintColor = UIColor.systemYellow
+                
+                cell.cellStar3.image = cell.cellStar3.image?.withRenderingMode(.alwaysTemplate)
+                cell.cellStar3.tintColor = UIColor.systemYellow
+                
+                cell.cellStar4.image = cell.cellStar4.image?.withRenderingMode(.alwaysTemplate)
+                cell.cellStar4.tintColor = UIColor.systemYellow
+                
+                cell.cellStar5.image = cell.cellStar5.image?.withRenderingMode(.alwaysTemplate)
+                cell.cellStar5.tintColor = UIColor.systemYellow
+            }
             
             if (user["profileImage"] != nil) {
                 let imageFile = user["profileImage"] as! PFFileObject
