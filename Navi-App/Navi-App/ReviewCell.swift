@@ -12,7 +12,11 @@ class ReviewCell: UITableViewCell {
     @IBOutlet weak var profileView: UIImageView!
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var reviewLabel: UILabel!
-    @IBOutlet weak var ratingView: UIImageView!
+    @IBOutlet weak var cellStar1: UIImageView!
+    @IBOutlet weak var cellStar2: UIImageView!
+    @IBOutlet weak var cellStar3: UIImageView!
+    @IBOutlet weak var cellStar4: UIImageView!
+    @IBOutlet weak var cellStar5: UIImageView!
     
     
     override func awakeFromNib() {

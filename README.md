@@ -329,35 +329,3 @@ An app that allows users to search through their favorite games to write and rea
 
 ![](milestone-walkthroughs/Milestone-1_Unit-10/home-screen-walkthrough.gif)
 ![](milestone-walkthroughs/Milestone-1_Unit-10/home-screen-collection-view-design.jpg)
-
-### Sprint 2 - Unit 11
-
-![](milestone-walkthroughs/Milestone-2_Unit-11/sprint2-walkthrough.gif)
-
-**Home Screen Pt. 2**
-- [x] User can see games from igdb api
-- [x] API has been connected
-- [x] Profile and Settings Button connected to navigation
-- [x] User can see app logo on top left
-- [x] Home Page Visuals
-
-![](milestone-walkthroughs/Milestone-2_Unit-11/json-conversion.jpg)
-![](milestone-walkthroughs/Milestone-2_Unit-11/gameNameAndDescription.jpg)
-![](milestone-walkthroughs/Milestone-2_Unit-11/getGameCoverArt.jpg)
-
-**Game Details Screen**
-- [x] User can see detailed game information
-- [x] User can add Reviews/Comments
-- [x] User can see the name and profile pic of review/comment authors
-- [x] Added Visuals
-
-**Profile Screen**
-- [x] User can view their Profile Page
-- [x] User can see their personalized info (Profile Picture, Fav Genre, and Fav Game)
-- [x] User can update their Fav Genre and Fav Game
-
-**Settings Screen**
-- [x] User can view the Settings Page
-- [x] User can change their profile picture
-- [x] User can change their username
-- [x] User can change their password
