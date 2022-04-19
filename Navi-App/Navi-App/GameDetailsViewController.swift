@@ -81,14 +81,14 @@ class GameDetailsViewController: UIViewController, UITableViewDelegate, UITableV
                 self.tableView.reloadData()
                 
                 
-                for review in self.reviews {
-                    self.ratingCounter = reviews![review as! Int] as! PFObject
-                    self.overallRating +=  self.ratingCounter["rating"] as! Int
-                }
-
+                let totalReviews: Int! = reviews?.count;
+                
+                reviews?.forEach({ review in
+                    self.overallRating += review["rating"] as! Int;
+                })
                 
                 if (self.overallRating > 0){
-                    self.ratingLabel.text = "\(self.overallRating)/5"
+                    self.ratingLabel.text = "\(self.overallRating / totalReviews)/5"
                 }
                 else{
                     self.ratingLabel.text = "No Ratings"

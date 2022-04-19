@@ -44,6 +44,9 @@ class ReviewViewController: UIViewController {
                 print("error!")
             }
         }
+        
+        
+        
         performSegue(withIdentifier: "back2ThePast" , sender: self)
     }
     
