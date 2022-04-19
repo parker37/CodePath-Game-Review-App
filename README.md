@@ -361,3 +361,20 @@ An app that allows users to search through their favorite games to write and rea
 - [x] User can change their profile picture
 - [x] User can change their username
 - [x] User can change their password
+
+### Sprint 3 - Unit 12
+
+![](milestone-walkthroughs/Milestone-3_Unit-12/sprint3-walkthrough.gif)
+
+**Game Details Screen**
+- [x] User is able to see/input ratings for reviews
+- [x] User is able to see the average rating for the game
+- [x] Fixed Constraints for Details Page
+
+**Settings Screen**
+- [x] User is able to logout
+- [x] User is able to stay logged in across
+
+**Home Screen**
+- [x] User can click search icon to toggle on/off search bar
+- [x] User can search for a game by title
