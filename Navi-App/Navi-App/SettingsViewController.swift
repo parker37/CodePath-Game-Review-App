@@ -32,7 +32,17 @@ class SettingsViewController: UIViewController, UIImagePickerControllerDelegate,
         }
     }
     
-
+    @IBAction func onLogoutButton(_ sender: Any) {
+        PFUser.logOut()
+        
+        let main = UIStoryboard(name: "Main", bundle: nil)
+        let loginViewController = main.instantiateViewController(withIdentifier: "LoginViewController")
+                
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene, let delegate = windowScene.delegate as? SceneDelegate else {return}
+        
+        delegate.window?.rootViewController = loginViewController
+    }
+    
     @IBAction func onSaveButton(_ sender: Any) {
         let userInfo = PFUser.current()!
         
@@ -60,7 +70,6 @@ class SettingsViewController: UIViewController, UIImagePickerControllerDelegate,
     }
 
     
-    
     @IBAction func backButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
@@ -78,6 +87,8 @@ class SettingsViewController: UIViewController, UIImagePickerControllerDelegate,
         present(picker, animated: true, completion: nil)
         
     }
+    
+    
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let image = info[.editedImage] as! UIImage
