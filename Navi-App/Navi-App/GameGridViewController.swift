@@ -245,7 +245,7 @@ class GameGridViewController: UIViewController, UICollectionViewDataSource, UICo
             searchTextField.isHidden = false;
             let myConst = view.constraintWith(identifier: "topConst");
             myConst?.constant = -25;
-            
+            collectionView.reloadData()
         } else {
             searchTextField.isHidden = true;
             let myConst = view.constraintWith(identifier: "topConst");
