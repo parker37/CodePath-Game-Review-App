@@ -10,7 +10,7 @@ import Parse
 
 class ReviewViewController: UIViewController {
 
-    @IBOutlet weak var reviewField: UITextField!
+    @IBOutlet weak var reviewField: UITextView!
     @IBOutlet weak var Star_1: UIImageView!
     @IBOutlet weak var Star_2: UIImageView!
     @IBOutlet weak var Star_3: UIImageView!
