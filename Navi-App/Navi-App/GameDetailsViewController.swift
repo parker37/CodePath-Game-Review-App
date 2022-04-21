@@ -71,6 +71,7 @@ class GameDetailsViewController: UIViewController, UITableViewDelegate, UITableV
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        viewDidLoad();
         
         let query = PFQuery(className: "Reviews")
         query.whereKey("game", equalTo: selectedGame["name"]!)
@@ -79,7 +80,6 @@ class GameDetailsViewController: UIViewController, UITableViewDelegate, UITableV
             if (reviews != nil) {
                 
                 self.reviews = reviews!
-                self.tableView.reloadData()
                 
                 
                 let totalReviews: Int! = reviews?.count;
@@ -94,6 +94,8 @@ class GameDetailsViewController: UIViewController, UITableViewDelegate, UITableV
                 else{
                     self.ratingLabel.text = "No Ratings"
                 }
+                
+                self.tableView.reloadData()
 
             }
         }

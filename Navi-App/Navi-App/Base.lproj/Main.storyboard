@@ -479,7 +479,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bob_at_Easel" translatesAutoresizingMaskIntoConstraints="NO" id="Do4-aS-CmF">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="missingCoverArt" translatesAutoresizingMaskIntoConstraints="NO" id="Do4-aS-CmF">
                                 <rect key="frame" x="20" y="88" width="152" height="228"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="152" id="jXk-vR-ztH"/>
@@ -516,14 +516,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile-photo" translatesAutoresizingMaskIntoConstraints="NO" id="Vji-vb-lny">
-                                                    <rect key="frame" x="20" y="49" width="50" height="50"/>
+                                                    <rect key="frame" x="20" y="49" width="60" height="60"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="50" id="LBx-s9-h0b"/>
-                                                        <constraint firstAttribute="height" constant="50" id="fOD-T8-Frh"/>
+                                                        <constraint firstAttribute="width" constant="60" id="LBx-s9-h0b"/>
+                                                        <constraint firstAttribute="height" constant="60" id="fOD-T8-Frh"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tim" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LPA-fx-tIg">
-                                                    <rect key="frame" x="78" y="53" width="159" height="42"/>
+                                                    <rect key="frame" x="88" y="58" width="159" height="42"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="159" id="cAm-gW-Nj6"/>
                                                         <constraint firstAttribute="height" constant="42" id="eb2-kO-xyO"/>
@@ -578,7 +578,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I really liked this game! I loved the story, music, and world." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tPE-Wz-khl">
-                                                    <rect key="frame" x="20" y="107" width="364" height="52"/>
+                                                    <rect key="frame" x="20" y="117" width="364" height="42"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="364" id="XdJ-Jb-JVw"/>
                                                         <constraint firstAttribute="height" constant="68" id="yEh-Fu-9vc"/>
@@ -598,7 +598,7 @@
                                                 <constraint firstItem="eSY-vY-cTy" firstAttribute="leading" secondItem="NlY-ZK-Xb9" secondAttribute="trailing" id="Voq-ld-GKC"/>
                                                 <constraint firstItem="tPE-Wz-khl" firstAttribute="top" secondItem="Vji-vb-lny" secondAttribute="bottom" constant="8" symbolic="YES" id="W69-m6-AgN"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="tPE-Wz-khl" secondAttribute="trailing" constant="10" id="XBl-2j-GD2"/>
-                                                <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="LPA-fx-tIg" secondAttribute="trailing" constant="157" id="Z1U-ud-hNl"/>
+                                                <constraint firstAttribute="trailingMargin" relation="lessThanOrEqual" secondItem="LPA-fx-tIg" secondAttribute="trailing" constant="147" id="Z1U-ud-hNl"/>
                                                 <constraint firstItem="NlY-ZK-Xb9" firstAttribute="leading" secondItem="sHX-Ao-klL" secondAttribute="leadingMargin" constant="2" id="ZPe-Ka-wc6"/>
                                                 <constraint firstItem="g17-Rx-SHy" firstAttribute="centerY" secondItem="NlY-ZK-Xb9" secondAttribute="centerY" id="aVn-p2-n5s"/>
                                                 <constraint firstItem="eSY-vY-cTy" firstAttribute="centerY" secondItem="NlY-ZK-Xb9" secondAttribute="centerY" id="bvQ-W4-p8b"/>
@@ -606,7 +606,7 @@
                                                 <constraint firstItem="g17-Rx-SHy" firstAttribute="leading" secondItem="MyY-7w-h6r" secondAttribute="trailing" id="fs0-G2-kFV"/>
                                                 <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="tPE-Wz-khl" secondAttribute="bottom" constant="8" id="gDj-Pf-eKV"/>
                                                 <constraint firstItem="tPE-Wz-khl" firstAttribute="leading" secondItem="sHX-Ao-klL" secondAttribute="leadingMargin" id="gc9-cP-RfA"/>
-                                                <constraint firstItem="LPA-fx-tIg" firstAttribute="top" secondItem="WZj-Gl-xJb" secondAttribute="bottom" constant="14" id="grs-vH-cbO"/>
+                                                <constraint firstItem="LPA-fx-tIg" firstAttribute="top" secondItem="WZj-Gl-xJb" secondAttribute="bottom" constant="19" id="grs-vH-cbO"/>
                                                 <constraint firstItem="WZj-Gl-xJb" firstAttribute="leading" secondItem="g17-Rx-SHy" secondAttribute="trailing" id="hIZ-Qe-fzQ"/>
                                                 <constraint firstItem="WZj-Gl-xJb" firstAttribute="top" secondItem="NlY-ZK-Xb9" secondAttribute="top" id="jnG-Nd-PiP"/>
                                                 <constraint firstItem="WZj-Gl-xJb" firstAttribute="centerY" secondItem="NlY-ZK-Xb9" secondAttribute="centerY" id="txd-K9-Vi2"/>
@@ -683,11 +683,11 @@
                                         <rect key="frame" x="0.0" y="308.5" width="414" height="37.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lbs-9e-blP" id="PZH-41-Nic">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="37"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="37.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a comment..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c5l-33-Ml3">
-                                                    <rect key="frame" x="16" y="8" width="390" height="21"/>
+                                                    <rect key="frame" x="16" y="8" width="390" height="21.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -704,8 +704,8 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HWx-51-dl0">
-                                <rect key="frame" x="20" y="405" width="120" height="31"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HWx-51-dl0">
+                                <rect key="frame" x="20" y="405" width="152" height="31"/>
                                 <color key="tintColor" red="0.82502478359999998" green="0.096490018070000003" blue="0.1544982493" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Write a Review"/>
@@ -917,7 +917,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Bob_at_Easel" width="278" height="358"/>
         <image name="Gold_Star" width="1200" height="1200"/>
         <image name="gearshape" catalog="system" width="128" height="121"/>
         <image name="home-app-logo" width="241" height="140"/>
@@ -926,6 +925,7 @@
         <image name="login-textfields" width="330" height="50"/>
         <image name="login-textfields-1" width="330" height="50"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="missingCoverArt" width="132" height="192"/>
         <image name="person.circle" catalog="system" width="128" height="121"/>
         <image name="profile-photo" width="25" height="25"/>
         <image name="profile-photo-filled" width="25" height="25"/>
