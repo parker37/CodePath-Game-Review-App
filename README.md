@@ -381,9 +381,13 @@ An app that allows users to search through their favorite games to write and rea
 
 ### Sprint 4 & Demo Day Walkthrough Video - Unit 13 & 14
 
+- [x] Added 1-5 Star Rating Scale
+- [x] User can see average ratings from all reviews
 - [x] Final App Polishing
 - [x] Fixing Screen Layout and Constraint Issues
 - [x] Reviews update live after submtting
+
+![](milestone-walkthroughs/Milestone-4_Unit-13/sprint4-walkthrough.gif)
 
 [Link To Walkthrough Video](https://drive.google.com/file/d/1uxMO9uqimJQ5fWaD3eGdPnESzSV9jb8_/view?usp=sharing)
 
