@@ -378,3 +378,11 @@ An app that allows users to search through their favorite games to write and rea
 **Home Screen**
 - [x] User can click search icon to toggle on/off search bar
 - [x] User can search for a game by title
+
+### Sprint 4 & Demo Day Walkthrough Video - Unit 13 & 14
+
+- [x] Final App Polishing
+- [x] Fixing Screen Layout and Constraint Issues
+- [x] Reviews update live after submtting
+
+![Link to Walkthrough Video](https://drive.google.com/file/d/1uxMO9uqimJQ5fWaD3eGdPnESzSV9jb8_/view?usp=sharing)
