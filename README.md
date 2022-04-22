@@ -386,4 +386,5 @@ An app that allows users to search through their favorite games to write and rea
 - [x] Reviews update live after submtting
 
 [Link To Walkthrough Video](https://drive.google.com/file/d/1uxMO9uqimJQ5fWaD3eGdPnESzSV9jb8_/view?usp=sharing)
+
 [Link To App Pitch PPT](https://docs.google.com/presentation/d/18HDlCh-R2IHgjJb8LJnnEuIDtE4le_GdlGskOaCK378/edit?usp=sharing)
